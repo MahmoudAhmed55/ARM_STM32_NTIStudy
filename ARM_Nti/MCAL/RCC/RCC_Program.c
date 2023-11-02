@@ -37,13 +37,13 @@ void RCC_InitClockSystem(void)
 	               SIT_BIT(RCC_CFGR,PLL_SRC);                  //HSE_SOURCE ENABLE
 	               SIT_BIT(RCC_CFGR,PLL_XTPRE);                //FULL HSE
 
-	               RCC_CFGR&=
+	               
           #endif
 
 	              RCC_CFGR^=(RCC_PLL_MUL<<PLL_MUL);            //PLL_MUL*2
 	              SIT_BIT(RCC_CR,PLL_ON);                      //Enable PLL_clock
 	              while(READ_BIT(RCC_CR,PLL_RDY));             //BUSY_WAIT waiting for PLL ready flag.
-	              RCC_CFGR^=(RCC_CLOCK_TYPE<<SW);              //
+	              RCC_CFGR^=(RCC_CLOCK_TYPE<<SW);              //CLOCK_SWITCH
 
 
 
