@@ -1,0 +1,23 @@
+/*
+ * RCC_Config.h
+ *
+ * Created: 2/11/2023 10:47:34 AM
+ *  Author: Mahmoud Ahmed Ismail
+ */
+
+#ifndef _RCC_Config_H_
+#define _RCC_Config_H_
+
+/* 1-RCC_HSI
+2-RCC_HSE_CRYSTAL
+3-RCC_HSE_RC
+4-RCC_PLL
+ */
+
+#define   RCC_CLOCK_TYPE  RCC_HSE_CRYSTAL
+
+#if       RCC_CLOCK_TYPE==RCC_PLL
+#define   PLL_SOURCE      PLL_HSI_DIVIDEBY2
+#endif
+
+#endif

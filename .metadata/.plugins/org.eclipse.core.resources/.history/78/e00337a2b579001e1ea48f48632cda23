@@ -1,0 +1,17 @@
+/*
+ * RCC_Interface.h
+ *
+ * Created: 2/11/2023 10:47:34 AM
+ *  Author: Mahmoud Ahmed Ismail
+ */
+
+
+#ifndef  _RCC_Interface_H_
+#define  _RCC_Interface_H_
+
+#include "STD_TYPES.h"
+
+void RCC_InitClockSystem(void);
+
+#endif
+

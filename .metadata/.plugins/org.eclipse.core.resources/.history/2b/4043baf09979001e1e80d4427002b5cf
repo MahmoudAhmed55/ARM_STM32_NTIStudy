@@ -1,0 +1,19 @@
+#define "STD_TYPES.h"
+#define "BIT_MATH.h"
+
+#define "RCC_Interface.h"
+#define "RCC_Private.h"
+#define "RCC_Config.h"
+
+void RCC_InitClockSystem(void)
+{
+   #if RCC_CLOCK_TYPE==RCC_HSI
+
+
+   #elif  RCC_CLOCK_TYPE==RCC_HSE_CRYSTAL
+
+   #elif  RCC_CLOCK_TYPE==RCC_HSE_RC
+
+   #elif  RCC_CLOCK_TYPE==RCC_PLL
+
+}

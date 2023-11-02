@@ -1,0 +1,44 @@
+/*
+ * RCC_Interface.h
+ *
+ * Created: 2/11/2023 10:47:34 AM
+ *  Author: Mahmoud Ahmed Ismail
+ */
+
+#ifndef  _RCC_Interface_H_
+#define  _RCC_Interface_H_
+
+typedef enum
+{
+     NO_CLOCK,
+	 SYSTEM_CLOCK,
+	 HSI_CLOCK,
+	 HSE_CLOCK,
+	 PLL_CLOCK_DIVIDEDBY2
+}MCO_t;
+
+typedef enum
+{
+	 pll_inputclockx2=0,
+	 pll_inputclockx3,
+	 pll_inputclockx4,
+	 pll_inputclockx5,
+	 pll_inputclockx6,
+	 pll_inputclockx7,
+	 pll_inputclockx8,
+	 pll_inputclockx9,
+	 pll_inputclockx10,
+	 pll_inputclockx11,
+	 pll_inputclockx12,
+	 pll_inputclockx13,
+	 pll_inputclockx14,
+	 pll_inputclockx15,
+	 pll_inputclockx16,
+	 pll_inputclockx16,
+}PLLMUl_t;
+
+
+void RCC_InitClockSystem(void);
+
+#endif
+

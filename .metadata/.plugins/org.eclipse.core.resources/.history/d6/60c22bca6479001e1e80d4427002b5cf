@@ -1,0 +1,47 @@
+/*
+ * RCC_Private.h
+ *
+ * Created: 2/11/2023 10:47:34 AM
+ *  Author: Mahmoud Ahmed Ismail
+ */
+
+#ifndef _RCC_Private_H_
+#define _RCC_Private_H_
+
+#define "STD_TYPES.h"
+
+
+#define RCC_BASEADDRESS      *((u32*)0x40021000)  //START ADDRESS
+#define RCC_ENDADDRESS       *((u32)0x400213FF)   //END   ADDRESS
+
+//clock_controlRegister
+#define RCC_CR               *((u32*)0x40021000)
+#define 0   HSI_ON
+#define 1   HSI_RDY
+#define 3   HSI_TRIM  //from bit3 to bit7
+#define 8   HSI_CAL  //from bit8 to bit15
+#define 16  HSE_ON
+#define 17  HSE_RDY
+#define 18  HSE_PYB
+#define 19  CSS_ON
+#define 24  PLL_ON
+#define 25  PLL_RDY
+
+#define RCC_CFGR             *((u32*)0x40021004)
+#define RCC_CIR              *((u32*)0x40021008)
+#define RCC_APB2RSTR         *((u32*)0x4002100C)
+#define RCC_APB1RSTR         *((u32*)0x40021010)
+#define RCC_AHBENR           *((u32*)0x40021014)
+#define RCC_APB2ENR          *((u32*)0x40021018)
+#define RCC_APB1ENR          *((u32*)0x4002101C)
+#define RCC_BDCR             *((u32*)0x40021020)
+#define RCC_CSR              *((u32*)0x40021024)
+
+
+
+
+
+
+
+
+#endif

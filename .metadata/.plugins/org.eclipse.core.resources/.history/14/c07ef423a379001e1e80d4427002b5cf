@@ -1,0 +1,78 @@
+/*
+ * RCC_Private.h
+ *
+ * Created: 2/11/2023 10:47:34 AM
+ *  Author: Mahmoud Ahmed Ismail
+ */
+
+#ifndef _RCC_Private_H_
+#define _RCC_Private_H_
+
+#define "STD_TYPES.h"
+
+//START_ENDADDRESS FOR RCC_PREPHIERLS
+
+#define RCC_BASEADDRESS      *((u32*)0x40021000)  //START ADDRESS
+#define RCC_ENDADDRESS       *((u32)0x400213FF)   //END   ADDRESS
+
+//clock_controlRegister
+#define RCC_CR               *((u32*)0x40021000)
+
+#define  HSI_ON    0                               //Enable high speed internal RC (8MHZ)
+#define  HSI_RDY   1                               // high speed internal  RC FLAG
+#define  HSI_TRIM  7	                           //from bit3 to bit7 ((+-) FREQUANCY START 16)
+#define  HSI_CAL   8                               //from bit8 to bit15 (H.W CALIBRATION)
+#define  HSE_ON    16                              //Enable high speed external
+#define  HSE_RDY   17                              //high speed external FLAG
+#define  HSE_BYp   18                              //BYPATH (if 1->RC) (if->0 crystal)
+#define  CSS_ON    19                              //Enable clock security system
+#define  PLL_ON    24                              //Enable pll_clock
+#define  PLL_RDY   25                              //ppl_clock  FLAG
+
+//Clock_configurationRegister
+#define RCC_CFGR             *((u32*)0x40021004)
+
+#define  SW           0                              //from bit0 to bit1  System clock switch
+#define  SWS          2                              // from bit2 to bit3   System clock switch status
+#define  HP_RE        4                              //from bit4 to bit7  AHB prescaler
+#define  PPR_E1       8                              //from bit8 to bit10 APB low-speed prescaler (APB1)
+#define  PPR_E2       11                             ////from bit 11 to bit13 APB high-speed prescaler (APB2)
+#define  ADC_PRE      14                             //from bit 14 to bit 15  ADC prescaler
+#define  PLL_SRC      16                             // PLL entry clock source(external or internal)
+#define  PLL_XTPRE    17                             // HSE divider for PLL entry
+#define  PLL_MUL      18                             // PLL multiplication factor  bit18 to bit21
+#define  USB_PRE      22                             //USB prescaler
+#define  MC0          24                             //Microcontroller clock output bit24 to bit26
+
+
+#define RCC_CIR              *((u32*)0x40021008)
+#define RCC_APB2RSTR         *((u32*)0x4002100C)
+#define RCC_APB1RSTR         *((u32*)0x40021010)
+#define RCC_AHBENR           *((u32*)0x40021014)
+#define RCC_APB2ENR          *((u32*)0x40021018)
+#define RCC_APB1ENR          *((u32*)0x4002101C)
+#define RCC_BDCR             *((u32*)0x40021020)
+#define RCC_CSR              *((u32*)0x40021024)
+
+
+//clock_type
+
+#define RCC_HSI           0
+#define RCC_HSE_CRYSTAL   1
+#define RCC_HSE_RC        2
+#define RCC_PLL           3
+
+//pll_source
+
+#define PLL_HSI_DIVIDEBY2         0
+#define PLL_HSE_DIVIDEBY2         1
+#define PLL_HSE                   2
+
+
+
+
+
+
+
+
+#endif

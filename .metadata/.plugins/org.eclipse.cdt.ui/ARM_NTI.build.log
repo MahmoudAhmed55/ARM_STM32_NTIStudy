@@ -1,0 +1,11 @@
+20:42:09 **** Incremental Build of configuration Release for project ARM_NTI ****
+make all 
+Building target: ARM_NTI.elf
+Invoking: Cross ARM GNU C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -Wall -Wextra  -g -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"ARM_NTI.map" --specs=nano.specs -o "ARM_NTI.elf"  ./src/main.o   
+c:/users/lenovo/desktop/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/bin/ld.exe: cannot open linker script file mem.ld: No such file or directory
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:59: ARM_NTI.elf] Error 1
+
+20:42:09 Build Finished (took 254ms)
+
