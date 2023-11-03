@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project>
-	<configuration id="ilg.gnuarmeclipse.managedbuild.cross.config.elf.debug.801301143" name="Debug">
+	<configuration id="ilg.gnuarmeclipse.managedbuild.cross.config.elf.debug.2111743630" name="Debug">
 		<extension point="org.eclipse.cdt.core.LanguageSettingsProvider">
 			<provider id="ilg.gnuarmeclipse.managedbuild.cross.GCCBuiltinSpecsDetector">
 				<language id="org.eclipse.cdt.core.gcc">
+					<entry kind="includePath" name="C:/Users/lenovo/Desktop/NTI/GitHub/ARM_STM32_NTIStudy/ARM_Nti/#undef __ARM_FEATURE_CRYPTO">
+						<flag value="BUILTIN|READONLY|LOCAL"/>
+					</entry>
 					<entry kind="includePath" name="C:/Users/lenovo/Desktop/IMT_SDK_Win_64/WinARM/ArmGCC/lib/gcc/arm-none-eabi/7.2.1/include">
 						<flag value="BUILTIN|READONLY"/>
 					</entry>
@@ -2692,7 +2695,7 @@
 			</provider>
 		</extension>
 	</configuration>
-	<configuration id="ilg.gnuarmeclipse.managedbuild.cross.config.elf.release.1763152847" name="Release">
+	<configuration id="ilg.gnuarmeclipse.managedbuild.cross.config.elf.release.2083939974" name="Release">
 		<extension point="org.eclipse.cdt.core.LanguageSettingsProvider">
 			<provider id="ilg.gnuarmeclipse.managedbuild.cross.GCCBuiltinSpecsDetector">
 				<language id="org.eclipse.cdt.core.gcc">

@@ -1,0 +1,21 @@
+/*
+ * main.c
+ *
+ *  Created on: Nov 2, 2023
+ *      Author: Mahmoud Ahmed Ismail
+ */
+
+#include "lib/STD_TYPES.h"
+#include "BIT_MATH.h"
+
+#include "RCC_Interface.h"
+
+
+void main(void)
+{
+
+
+}
+
+
+

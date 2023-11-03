@@ -1,7 +1,0 @@
-#define "STD_TYPES.h"
-#define "BIT_MATH.h"
-
-#define "RCC_Interface.h"
-#define "RCC_Private.h"
-#define "RCC_Config.h"
-
