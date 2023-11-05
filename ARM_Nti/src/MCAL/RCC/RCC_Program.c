@@ -55,39 +55,39 @@ void RCC_InitClockSystem(void)
 
 }
 
-void RCC_EnableClock(peripheralBus_t bus,u8 PeripheralId)
+void RCC_EnableClock(peripheralBus_t bus, APB2_peripheral_t id)
 {
-	if (PeripheralId <= 31)
+	if (id <= 31)
 		{
 			switch (bus)
 			{
 				case AHB :
-				SET_BIT(RCC_AHBENR,PeripheralId) ;
+				SIT_BIT(RCC_AHBENR,id) ;
 				break;
 				case APB1:
-				SET_BIT(RCC_APB1ENR,PeripheralId) ;
+				SIT_BIT(RCC_APB1ENR,id) ;
 				break;
 				case APB2:
-				SET_BIT(RCC_APB2ENR,PeripheralId) ;
+				SIT_BIT(RCC_APB2ENR,id) ;
 				break;
 			}
 		}
 
 }
-void RCC_DisEnableClock(peripheralBus_t bus,u8 PeripheralId)
+void RCC_DisEnableClock(peripheralBus_t bus, APB2_peripheral_t  id)
 {
-	if (PeripheralId <= 31)
+	if (id <= 31)
 		{
 			switch (bus)
 			{
 				case AHB :
-				CLR_BIT(RCC_AHBENR,PeripheralId) ;
+				CLR_BIT(RCC_AHBENR,id) ;
 				break;
 				case APB1:
-				CLR_BIT(RCC_APB1ENR,PeripheralId) ;
+				CLR_BIT(RCC_APB1ENR,id) ;
 				break;
 				case APB2:
-				CLR_BIT(RCC_APB2ENR,PeripheralId) ;
+				CLR_BIT(RCC_APB2ENR,id) ;
 				break;
 			}
 		}

@@ -12,11 +12,11 @@
 
 //START_ENDADDRESS FOR RCC_PREPHIERLS
 
-#define RCC_BASEADDRESS      *((u32*)0x40021000)  //START ADDRESS
-#define RCC_ENDADDRESS       *((u32)0x400213FF)   //END   ADDRESS
+#define RCC_BASEADDRESS      *((volatile u32*)0x40021000)  //START ADDRESS
+#define RCC_ENDADDRESS       *((volatile u32)0x400213FF)   //END   ADDRESS
 
 //clock_controlRegister
-#define RCC_CR               *((u32*)0x40021000)
+#define RCC_CR               *((volatile u32*)0x40021000)
 
 #define  HSI_ON    0                               //Enable high speed internal RC (8MHZ)
 #define  HSI_RDY   1                               // high speed internal  RC FLAG
@@ -30,7 +30,7 @@
 #define  PLL_RDY   25                              //ppl_clock  FLAG
 
 //Clock_configurationRegister
-#define RCC_CFGR             *((u32*)0x40021004)
+#define RCC_CFGR             *((volatile u32*)0x40021004)
 
 #define  SW           0                              //from bit0 to bit1  System clock switch
 #define  SWS          2                              // from bit2 to bit3   System clock switch status
@@ -45,14 +45,14 @@
 #define  MC0          24                             //Microcontroller clock output bit24 to bit26
 
 
-#define RCC_CIR              *((u32*)0x40021008)
-#define RCC_APB2RSTR         *((u32*)0x4002100C)
-#define RCC_APB1RSTR         *((u32*)0x40021010)
-#define RCC_AHBENR           *((u32*)0x40021014)
-#define RCC_APB2ENR          *((u32*)0x40021018)
-#define RCC_APB1ENR          *((u32*)0x4002101C)
-#define RCC_BDCR             *((u32*)0x40021020)
-#define RCC_CSR              *((u32*)0x40021024)
+#define RCC_CIR              *((volatile u32*)0x40021008)
+#define RCC_APB2RSTR         *((volatile u32*)0x4002100C)
+#define RCC_APB1RSTR         *((volatile u32*)0x40021010)
+#define RCC_AHBENR           *((volatile u32*)0x40021014)
+#define RCC_APB2ENR          *((volatile u32*)0x40021018)
+#define RCC_APB1ENR          *((volatile u32*)0x4002101C)
+#define RCC_BDCR             *((volatile u32*)0x40021020)
+#define RCC_CSR              *((volatile u32*)0x40021024)
 
 
 //clock_type
@@ -90,6 +90,6 @@
 #define PLL_MULBY14    12
 #define PLL_MULBY15    13
 #define PLL_MULBY16    14
-#define PLL_MULBY16    15
+#define PLL_MULBY16_    15
 
 #endif

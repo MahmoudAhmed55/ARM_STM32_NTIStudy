@@ -1,0 +1,14 @@
+
+
+#ifndef _GPIO_PRIVATE_H_
+#define _GPIO_PRIVATE_H_
+
+#define GPIOA_BASE_ADDRESS       0x40010800
+#define GPIOB_BASE_ADDRESS       0x40010C00
+#define GPIOC_BASE_ADDRESS       0x40011000
+
+
+
+
+
+#endif

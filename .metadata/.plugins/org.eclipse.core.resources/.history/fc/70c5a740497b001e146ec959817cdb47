@@ -1,0 +1,19 @@
+
+#include "../../lib/STD_TYPES.h"
+#include "../../lib/BIT_MATH.h"
+#include "GPIO_Interface.h"
+#include "GPIO_Private.h"
+#include "GPIO_Config.h"
+
+void GPIO_SetPinDirection(Port_t port,Pin_t pin,MODE_CNF_t mode)
+{
+	switch(port)
+	{
+	case PA:
+		if (pin<8)
+		{
+			GPIOA_CRL&=~((0b1111)<<(pin*4));
+
+		}
+	}
+}
