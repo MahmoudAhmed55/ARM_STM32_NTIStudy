@@ -59,4 +59,8 @@ void GPIO_SetPinDirection(Port_t port,Pin_t pin,MODE_CNF_t mode);
 void GPIO_SetPinValue(Port_t port,Pin_t pin,Pin_Value_t value);
 u8 GPIO_GetPinValue(Port_t  port,Pin_t  pin);
 
+void GPIO_SetPort(Port_t port,MODE_CNF_t mode);
+void GPIO_SetPortValue(Port_t port,u32 value);
+
+
 #endif

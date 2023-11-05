@@ -1,11 +1,25 @@
-09:45:11 **** Incremental Build of configuration Release for project ARM_NTI ****
+12:54:04 **** Incremental Build of configuration Release for project ARM_NTI ****
 make all 
+Building file: ../src/MCAL/RCC/RCC_Program.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -Wall -Wextra  -g -DNDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu11 -MMD -MP -MF"src/MCAL/RCC/RCC_Program.d" -MT"src/MCAL/RCC/RCC_Program.o" -c -o "src/MCAL/RCC/RCC_Program.o" "../src/MCAL/RCC/RCC_Program.c"
+Finished building: ../src/MCAL/RCC/RCC_Program.c
+ 
+Building target: ARM_NTI.elf
+Invoking: Cross ARM GNU C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -Wall -Wextra  -g -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"ARM_NTI.map" --specs=nano.specs -o "ARM_NTI.elf"  ./system/src/stm32f1-stdperiph/misc.o ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f10x.o ./system/src/cmsis/vectors_stm32f10x.o  ./src/MCAL/RCC/RCC_Program.o  ./src/MCAL/GPIO/GPIO_Program.o  ./src/main.o   
+Finished building target: ARM_NTI.elf
+ 
+Invoking: Cross ARM GNU Create Flash Image
+arm-none-eabi-objcopy -O ihex "ARM_NTI.elf"  "ARM_NTI.hex"
+Finished building: ARM_NTI.hex
+ 
 Invoking: Cross ARM GNU Print Size
 arm-none-eabi-size --format=berkeley "ARM_NTI.elf"
    text	   data	    bss	    dec	    hex	filename
-   1416	     68	    260	   1744	    6d0	ARM_NTI.elf
+   1476	     68	    260	   1804	    70c	ARM_NTI.elf
 Finished building: ARM_NTI.siz
  
 
-09:45:12 Build Finished (took 425ms)
+12:54:06 Build Finished (took 1s.473ms)
 

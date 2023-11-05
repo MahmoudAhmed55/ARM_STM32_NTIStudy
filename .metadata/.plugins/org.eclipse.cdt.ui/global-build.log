@@ -1,8 +1,262 @@
-09:45:11 **** Incremental Build of configuration Release for project ARM_NTI ****
+12:34:39 **** Incremental Build of configuration Release for project ARM_NTI ****
 make all 
+Building file: ../src/MCAL/GPIO/GPIO_Program.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -Wall -Wextra  -g -DNDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu11 -MMD -MP -MF"src/MCAL/GPIO/GPIO_Program.d" -MT"src/MCAL/GPIO/GPIO_Program.o" -c -o "src/MCAL/GPIO/GPIO_Program.o" "../src/MCAL/GPIO/GPIO_Program.c"
+../src/MCAL/GPIO/GPIO_Program.c:178:6: error: conflicting types for 'GPIO_SetPortValue'
+ void GPIO_SetPortValue(Port_t port,u16 value)
+      ^~~~~~~~~~~~~~~~~
+In file included from ../src/MCAL/GPIO/GPIO_Program.c:4:0:
+../src/MCAL/GPIO/GPIO_Interface.h:63:6: note: previous declaration of 'GPIO_SetPortValue' was here
+ void GPIO_SetPortValue(Port_t port,u32 value);
+      ^~~~~~~~~~~~~~~~~
+../src/MCAL/GPIO/GPIO_Program.c: In function 'GPIO_SetPortValue':
+../src/MCAL/GPIO/GPIO_Program.c:180:9: warning: unused variable 'rem' [-Wunused-variable]
+  u8 i=0,rem;
+         ^~~
+make: *** [src/MCAL/GPIO/subdir.mk:20: src/MCAL/GPIO/GPIO_Program.o] Error 1
+12:35:35 **** Incremental Build of configuration Release for project ARM_NTI ****
+make all 
+Building file: ../src/MCAL/GPIO/GPIO_Program.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -Wall -Wextra  -g -DNDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu11 -MMD -MP -MF"src/MCAL/GPIO/GPIO_Program.d" -MT"src/MCAL/GPIO/GPIO_Program.o" -c -o "src/MCAL/GPIO/GPIO_Program.o" "../src/MCAL/GPIO/GPIO_Program.c"
+../src/MCAL/GPIO/GPIO_Program.c: In function 'GPIO_SetPortValue':
+../src/MCAL/GPIO/GPIO_Program.c:180:9: warning: unused variable 'rem' [-Wunused-variable]
+  u8 i=0,rem;
+         ^~~
+Finished building: ../src/MCAL/GPIO/GPIO_Program.c
+ 
+Building file: ../src/main.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -Wall -Wextra  -g -DNDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: ARM_NTI.elf
+Invoking: Cross ARM GNU C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -Wall -Wextra  -g -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"ARM_NTI.map" --specs=nano.specs -o "ARM_NTI.elf"  ./system/src/stm32f1-stdperiph/misc.o ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f10x.o ./system/src/cmsis/vectors_stm32f10x.o  ./src/MCAL/RCC/RCC_Program.o  ./src/MCAL/GPIO/GPIO_Program.o  ./src/main.o   
+Finished building target: ARM_NTI.elf
+ 
+Invoking: Cross ARM GNU Create Flash Image
+arm-none-eabi-objcopy -O ihex "ARM_NTI.elf"  "ARM_NTI.hex"
+Finished building: ARM_NTI.hex
+ 
 Invoking: Cross ARM GNU Print Size
 arm-none-eabi-size --format=berkeley "ARM_NTI.elf"
    text	   data	    bss	    dec	    hex	filename
-   1416	     68	    260	   1744	    6d0	ARM_NTI.elf
+   1640	     68	    260	   1968	    7b0	ARM_NTI.elf
+Finished building: ARM_NTI.siz
+ 
+12:37:04 **** Incremental Build of configuration Release for project ARM_NTI ****
+make all 
+Building file: ../src/MCAL/GPIO/GPIO_Program.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -Wall -Wextra  -g -DNDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu11 -MMD -MP -MF"src/MCAL/GPIO/GPIO_Program.d" -MT"src/MCAL/GPIO/GPIO_Program.o" -c -o "src/MCAL/GPIO/GPIO_Program.o" "../src/MCAL/GPIO/GPIO_Program.c"
+../src/MCAL/GPIO/GPIO_Program.c: In function 'GPIO_SetPort':
+../src/MCAL/GPIO/GPIO_Program.c:126:32: error: 'c' undeclared (first use in this function)
+      GPIO_SetPinDirection(port,c,mode);
+                                ^
+../src/MCAL/GPIO/GPIO_Program.c:126:32: note: each undeclared identifier is reported only once for each function it appears in
+../src/MCAL/GPIO/GPIO_Program.c: In function 'GPIO_SetPortValue':
+../src/MCAL/GPIO/GPIO_Program.c:180:9: warning: unused variable 'rem' [-Wunused-variable]
+  u8 i=0,rem;
+         ^~~
+make: *** [src/MCAL/GPIO/subdir.mk:20: src/MCAL/GPIO/GPIO_Program.o] Error 1
+12:37:49 **** Incremental Build of configuration Release for project ARM_NTI ****
+make all 
+Building file: ../src/MCAL/GPIO/GPIO_Program.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -Wall -Wextra  -g -DNDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu11 -MMD -MP -MF"src/MCAL/GPIO/GPIO_Program.d" -MT"src/MCAL/GPIO/GPIO_Program.o" -c -o "src/MCAL/GPIO/GPIO_Program.o" "../src/MCAL/GPIO/GPIO_Program.c"
+../src/MCAL/GPIO/GPIO_Program.c: In function 'GPIO_SetPort':
+../src/MCAL/GPIO/GPIO_Program.c:152:35: error: 'c' undeclared (first use in this function)
+         GPIO_SetPinDirection(port,c,mode);
+                                   ^
+../src/MCAL/GPIO/GPIO_Program.c:152:35: note: each undeclared identifier is reported only once for each function it appears in
+../src/MCAL/GPIO/GPIO_Program.c: In function 'GPIO_SetPortValue':
+../src/MCAL/GPIO/GPIO_Program.c:180:9: warning: unused variable 'rem' [-Wunused-variable]
+  u8 i=0,rem;
+         ^~~
+make: *** [src/MCAL/GPIO/subdir.mk:20: src/MCAL/GPIO/GPIO_Program.o] Error 1
+12:38:25 **** Incremental Build of configuration Release for project ARM_NTI ****
+make all 
+Building file: ../src/MCAL/GPIO/GPIO_Program.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -Wall -Wextra  -g -DNDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu11 -MMD -MP -MF"src/MCAL/GPIO/GPIO_Program.d" -MT"src/MCAL/GPIO/GPIO_Program.o" -c -o "src/MCAL/GPIO/GPIO_Program.o" "../src/MCAL/GPIO/GPIO_Program.c"
+../src/MCAL/GPIO/GPIO_Program.c: In function 'GPIO_SetPortValue':
+../src/MCAL/GPIO/GPIO_Program.c:180:9: warning: unused variable 'rem' [-Wunused-variable]
+  u8 i=0,rem;
+         ^~~
+Finished building: ../src/MCAL/GPIO/GPIO_Program.c
+ 
+Building target: ARM_NTI.elf
+Invoking: Cross ARM GNU C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -Wall -Wextra  -g -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"ARM_NTI.map" --specs=nano.specs -o "ARM_NTI.elf"  ./system/src/stm32f1-stdperiph/misc.o ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f10x.o ./system/src/cmsis/vectors_stm32f10x.o  ./src/MCAL/RCC/RCC_Program.o  ./src/MCAL/GPIO/GPIO_Program.o  ./src/main.o   
+Finished building target: ARM_NTI.elf
+ 
+Invoking: Cross ARM GNU Create Flash Image
+arm-none-eabi-objcopy -O ihex "ARM_NTI.elf"  "ARM_NTI.hex"
+Finished building: ARM_NTI.hex
+ 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "ARM_NTI.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1640	     68	    260	   1968	    7b0	ARM_NTI.elf
+Finished building: ARM_NTI.siz
+ 
+12:38:34 **** Incremental Build of configuration Release for project ARM_NTI ****
+make all 
+Building file: ../src/MCAL/GPIO/GPIO_Program.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -Wall -Wextra  -g -DNDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu11 -MMD -MP -MF"src/MCAL/GPIO/GPIO_Program.d" -MT"src/MCAL/GPIO/GPIO_Program.o" -c -o "src/MCAL/GPIO/GPIO_Program.o" "../src/MCAL/GPIO/GPIO_Program.c"
+Finished building: ../src/MCAL/GPIO/GPIO_Program.c
+ 
+Building target: ARM_NTI.elf
+Invoking: Cross ARM GNU C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -Wall -Wextra  -g -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"ARM_NTI.map" --specs=nano.specs -o "ARM_NTI.elf"  ./system/src/stm32f1-stdperiph/misc.o ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f10x.o ./system/src/cmsis/vectors_stm32f10x.o  ./src/MCAL/RCC/RCC_Program.o  ./src/MCAL/GPIO/GPIO_Program.o  ./src/main.o   
+Finished building target: ARM_NTI.elf
+ 
+Invoking: Cross ARM GNU Create Flash Image
+arm-none-eabi-objcopy -O ihex "ARM_NTI.elf"  "ARM_NTI.hex"
+Finished building: ARM_NTI.hex
+ 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "ARM_NTI.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1640	     68	    260	   1968	    7b0	ARM_NTI.elf
+Finished building: ARM_NTI.siz
+ 
+12:39:40 **** Incremental Build of configuration Release for project ARM_NTI ****
+make all 
+Building file: ../src/MCAL/GPIO/GPIO_Program.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -Wall -Wextra  -g -DNDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu11 -MMD -MP -MF"src/MCAL/GPIO/GPIO_Program.d" -MT"src/MCAL/GPIO/GPIO_Program.o" -c -o "src/MCAL/GPIO/GPIO_Program.o" "../src/MCAL/GPIO/GPIO_Program.c"
+Finished building: ../src/MCAL/GPIO/GPIO_Program.c
+ 
+Building target: ARM_NTI.elf
+Invoking: Cross ARM GNU C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -Wall -Wextra  -g -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"ARM_NTI.map" --specs=nano.specs -o "ARM_NTI.elf"  ./system/src/stm32f1-stdperiph/misc.o ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f10x.o ./system/src/cmsis/vectors_stm32f10x.o  ./src/MCAL/RCC/RCC_Program.o  ./src/MCAL/GPIO/GPIO_Program.o  ./src/main.o   
+Finished building target: ARM_NTI.elf
+ 
+Invoking: Cross ARM GNU Create Flash Image
+arm-none-eabi-objcopy -O ihex "ARM_NTI.elf"  "ARM_NTI.hex"
+Finished building: ARM_NTI.hex
+ 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "ARM_NTI.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1694	     68	    260	   2022	    7e6	ARM_NTI.elf
+Finished building: ARM_NTI.siz
+ 
+12:40:58 **** Incremental Build of configuration Release for project ARM_NTI ****
+make all 
+Building file: ../src/MCAL/GPIO/GPIO_Program.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -Wall -Wextra  -g -DNDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu11 -MMD -MP -MF"src/MCAL/GPIO/GPIO_Program.d" -MT"src/MCAL/GPIO/GPIO_Program.o" -c -o "src/MCAL/GPIO/GPIO_Program.o" "../src/MCAL/GPIO/GPIO_Program.c"
+Finished building: ../src/MCAL/GPIO/GPIO_Program.c
+ 
+Building target: ARM_NTI.elf
+Invoking: Cross ARM GNU C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -Wall -Wextra  -g -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"ARM_NTI.map" --specs=nano.specs -o "ARM_NTI.elf"  ./system/src/stm32f1-stdperiph/misc.o ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f10x.o ./system/src/cmsis/vectors_stm32f10x.o  ./src/MCAL/RCC/RCC_Program.o  ./src/MCAL/GPIO/GPIO_Program.o  ./src/main.o   
+Finished building target: ARM_NTI.elf
+ 
+Invoking: Cross ARM GNU Create Flash Image
+arm-none-eabi-objcopy -O ihex "ARM_NTI.elf"  "ARM_NTI.hex"
+Finished building: ARM_NTI.hex
+ 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "ARM_NTI.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1694	     68	    260	   2022	    7e6	ARM_NTI.elf
+Finished building: ARM_NTI.siz
+ 
+12:46:30 **** Incremental Build of configuration Release for project ARM_NTI ****
+make all 
+Building file: ../src/MCAL/GPIO/GPIO_Program.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -Wall -Wextra  -g -DNDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu11 -MMD -MP -MF"src/MCAL/GPIO/GPIO_Program.d" -MT"src/MCAL/GPIO/GPIO_Program.o" -c -o "src/MCAL/GPIO/GPIO_Program.o" "../src/MCAL/GPIO/GPIO_Program.c"
+../src/MCAL/GPIO/GPIO_Program.c: In function 'GPIO_SetPortValue':
+../src/MCAL/GPIO/GPIO_Program.c:180:5: warning: unused variable 'i' [-Wunused-variable]
+  u8 i=0;
+     ^
+Finished building: ../src/MCAL/GPIO/GPIO_Program.c
+ 
+Building target: ARM_NTI.elf
+Invoking: Cross ARM GNU C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -Wall -Wextra  -g -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"ARM_NTI.map" --specs=nano.specs -o "ARM_NTI.elf"  ./system/src/stm32f1-stdperiph/misc.o ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f10x.o ./system/src/cmsis/vectors_stm32f10x.o  ./src/MCAL/RCC/RCC_Program.o  ./src/MCAL/GPIO/GPIO_Program.o  ./src/main.o   
+Finished building target: ARM_NTI.elf
+ 
+Invoking: Cross ARM GNU Create Flash Image
+arm-none-eabi-objcopy -O ihex "ARM_NTI.elf"  "ARM_NTI.hex"
+Finished building: ARM_NTI.hex
+ 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "ARM_NTI.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1474	     68	    260	   1802	    70a	ARM_NTI.elf
+Finished building: ARM_NTI.siz
+ 
+12:46:42 **** Incremental Build of configuration Release for project ARM_NTI ****
+make all 
+Building file: ../src/MCAL/GPIO/GPIO_Program.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -Wall -Wextra  -g -DNDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu11 -MMD -MP -MF"src/MCAL/GPIO/GPIO_Program.d" -MT"src/MCAL/GPIO/GPIO_Program.o" -c -o "src/MCAL/GPIO/GPIO_Program.o" "../src/MCAL/GPIO/GPIO_Program.c"
+Finished building: ../src/MCAL/GPIO/GPIO_Program.c
+ 
+Building target: ARM_NTI.elf
+Invoking: Cross ARM GNU C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -Wall -Wextra  -g -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"ARM_NTI.map" --specs=nano.specs -o "ARM_NTI.elf"  ./system/src/stm32f1-stdperiph/misc.o ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f10x.o ./system/src/cmsis/vectors_stm32f10x.o  ./src/MCAL/RCC/RCC_Program.o  ./src/MCAL/GPIO/GPIO_Program.o  ./src/main.o   
+Finished building target: ARM_NTI.elf
+ 
+Invoking: Cross ARM GNU Create Flash Image
+arm-none-eabi-objcopy -O ihex "ARM_NTI.elf"  "ARM_NTI.hex"
+Finished building: ARM_NTI.hex
+ 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "ARM_NTI.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1474	     68	    260	   1802	    70a	ARM_NTI.elf
+Finished building: ARM_NTI.siz
+ 
+12:47:35 **** Incremental Build of configuration Release for project ARM_NTI ****
+make all 
+Building file: ../src/main.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -Wall -Wextra  -g -DNDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: ARM_NTI.elf
+Invoking: Cross ARM GNU C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -Wall -Wextra  -g -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"ARM_NTI.map" --specs=nano.specs -o "ARM_NTI.elf"  ./system/src/stm32f1-stdperiph/misc.o ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f10x.o ./system/src/cmsis/vectors_stm32f10x.o  ./src/MCAL/RCC/RCC_Program.o  ./src/MCAL/GPIO/GPIO_Program.o  ./src/main.o   
+Finished building target: ARM_NTI.elf
+ 
+Invoking: Cross ARM GNU Create Flash Image
+arm-none-eabi-objcopy -O ihex "ARM_NTI.elf"  "ARM_NTI.hex"
+Finished building: ARM_NTI.hex
+ 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "ARM_NTI.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1476	     68	    260	   1804	    70c	ARM_NTI.elf
+Finished building: ARM_NTI.siz
+ 
+12:54:04 **** Incremental Build of configuration Release for project ARM_NTI ****
+make all 
+Building file: ../src/MCAL/RCC/RCC_Program.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -Wall -Wextra  -g -DNDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu11 -MMD -MP -MF"src/MCAL/RCC/RCC_Program.d" -MT"src/MCAL/RCC/RCC_Program.o" -c -o "src/MCAL/RCC/RCC_Program.o" "../src/MCAL/RCC/RCC_Program.c"
+Finished building: ../src/MCAL/RCC/RCC_Program.c
+ 
+Building target: ARM_NTI.elf
+Invoking: Cross ARM GNU C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -Wall -Wextra  -g -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"ARM_NTI.map" --specs=nano.specs -o "ARM_NTI.elf"  ./system/src/stm32f1-stdperiph/misc.o ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f10x.o ./system/src/cmsis/vectors_stm32f10x.o  ./src/MCAL/RCC/RCC_Program.o  ./src/MCAL/GPIO/GPIO_Program.o  ./src/main.o   
+Finished building target: ARM_NTI.elf
+ 
+Invoking: Cross ARM GNU Create Flash Image
+arm-none-eabi-objcopy -O ihex "ARM_NTI.elf"  "ARM_NTI.hex"
+Finished building: ARM_NTI.hex
+ 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "ARM_NTI.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1476	     68	    260	   1804	    70c	ARM_NTI.elf
 Finished building: ARM_NTI.siz
  

@@ -113,3 +113,82 @@ u8 GPIO_GetPinValue(Port_t  port,Pin_t  pin)
 	return read;
 
 }
+void GPIO_SetPort(Port_t port,MODE_CNF_t mode)
+{
+	u8 i=0;
+	switch(port)
+	{
+	case PA:
+		 if (i<8)
+		 {
+			 for (i=0;i<8;i++)
+			 {
+				 GPIO_SetPinDirection(port,i,mode);
+
+			 }
+		 }
+		  if (i>=8&&i<16)
+		 {
+			 for (;i<16;i++)
+			 	 {
+			 		 GPIO_SetPinDirection(port,i,mode);
+
+			      }
+		 }
+		 break;
+	   case PB:
+			 if (i<8)
+			 {
+				 for (i=0;i<8;i++)
+				 {
+					 GPIO_SetPinDirection(port,i,mode);
+
+				 }
+			 }
+			  if (i>=8&&i<16)
+			 {
+				 for (;i<16;i++)
+				 	 {
+				 		 GPIO_SetPinDirection(port,i,mode);
+
+				      }
+			 }
+			 break;
+	case PC:
+			 if (i<8)
+			 {
+				 for (i=0;i<8;i++)
+				 {
+					 GPIO_SetPinDirection(port,i,mode);
+
+				 }
+			 }
+			   if (i>=8&&i<16)
+			 {
+				 for (;i<16;i++)
+				 	 {
+				 		 GPIO_SetPinDirection(port,i,mode);
+
+				      }
+			 }
+			 break;
+	     default:break;
+	}
+}
+void GPIO_SetPortValue(Port_t port,u32 value)
+{
+
+
+	switch(port)
+			{
+			case PA: GPIOA_ODR=value;
+				break;
+			case PB: GPIOB_ODR=value;
+			break;
+			case PC:GPIOC_ODR=value;
+								break;
+			default:break;
+			}
+
+}
+//u32 GPIO_GetPortValue(Port_t  port);

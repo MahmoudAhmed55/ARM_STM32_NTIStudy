@@ -15,11 +15,13 @@ void main(void)
 {
 	RCC_InitClockSystem();
 	RCC_EnableClock(APB2,IOPA);
-	GPIO_SetPinDirection(PA,PIN0,OUTPUT10KHZ_PUSHPALL);
+	GPIO_SetPort(PA,OUTPUT10KHZ_PUSHPALL);
+
+
 	u16 i=0,j=0;
 	while (1)
 	{
-		GPIO_SetPinValue(PA,PIN0,HIGH);
+		GPIO_SetPortValue(PA,0XFFFFFFFF);
 
 		for(i=0;i<500;i++)
 		{
@@ -28,8 +30,8 @@ void main(void)
 
 			}
 		}
+		GPIO_SetPortValue(PA,0X0);
 
-		GPIO_SetPinValue(PA,PIN0,LOW);
 					for(i=0;i<500;i++)
 					{
 						for(j=0;j<500;j++)
@@ -37,7 +39,6 @@ void main(void)
 
 								}
 		    		}
-
 	}
 
 }

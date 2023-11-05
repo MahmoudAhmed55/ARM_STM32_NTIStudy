@@ -4,8 +4,9 @@
 #include "../../lib/STD_TYPES.h"
 #include "../../lib/BIT_MATH.h"
 #include "RCC_Interface.h"
-#include "RCC_Config.h"
 #include "RCC_Private.h"
+#include "RCC_Config.h"
+
 
 
 
@@ -25,7 +26,7 @@ void RCC_InitClockSystem(void)
 	SIT_BIT(RCC_CFGR,SW);                   //HSE selected as system clock.
 
    #elif  RCC_CLOCK_TYPE==RCC_HSE_RC
-	SET_BIT(RCC_CR,HSE_BYP);                //Write 1 for ByPath RC.
+	SIT_BIT(RCC_CR,HSE_BYp);                //Write 1 for ByPath RC.
 	SIT_BIT(RCC_CR,HSE_ON);                 //Enable HSE.
 	while(READ_BIT(RCC_CR,HSE_RDY));        //BUSY_WAIT waiting for HSE ready flag.
 	SIT_BIT(RCC_CFGR,SW);                   //HSE selected as system clock.
@@ -35,11 +36,12 @@ void RCC_InitClockSystem(void)
            #if    RCC_PLL_SOURCE==PLL_HSI_DIVIDEBY2
 
            #elif  RCC_PLL_SOURCE==PLL_HSE_DIVIDEBY2
+	             SIT_BIT(RCC_CFGR,PLL_XTPRE);
 	               SIT_BIT(RCC_CFGR,PLL_SRC);                   //HSE_SOURCE ENABLE
 
            #elif  RCC_PLL_SOURCE==PLL_HSE
 	               SIT_BIT(RCC_CFGR,PLL_SRC);                  //HSE_SOURCE ENABLE
-	               SIT_BIT(RCC_CFGR,PLL_XTPRE);                //FULL HSE
+	                              //FULL HSE
 
 	               
           #endif
@@ -51,11 +53,13 @@ void RCC_InitClockSystem(void)
 
 
 
+
+
 #endif
 
 }
 
-void RCC_EnableClock(peripheralBus_t bus, APB2_peripheral_t id)
+void RCC_EnableClock(peripheralBus_t bus, peripheral_EN_t id)
 {
 	if (id <= 31)
 		{
@@ -74,7 +78,7 @@ void RCC_EnableClock(peripheralBus_t bus, APB2_peripheral_t id)
 		}
 
 }
-void RCC_DisEnableClock(peripheralBus_t bus, APB2_peripheral_t  id)
+void RCC_DisEnableClock(peripheralBus_t bus, peripheral_EN_t  id)
 {
 	if (id <= 31)
 		{
