@@ -1,0 +1,57 @@
+/*
+ * main.c
+ *
+ *  Created on: Nov 2, 2023
+ *      Author: Mahmoud Ahmed Ismail
+ */
+
+#include "lib/STD_TYPES.h"
+#include "lib/BIT_MATH.h"
+
+#include "MCAL/RCC/RCC_Interface.h"
+#include "MCAL/GPIO/GPIO_Interface.h"
+
+void main(void)
+{
+	RCC_InitClockSystem();
+	RCC_EnableClock(APB2,IOPA);
+	RCC_EnableClock(APB2,IOPB);
+	RCC_EnableClock(APB2,IOPC);
+    DIO_Init();
+
+
+    while (1)
+    {
+
+    	GPIO_TogPin(PINB0);
+    	GPIO_TogPin(PINB1);
+    	GPIO_TogPin(PINB2);
+    	GPIO_TogPin(PINB3);
+    	GPIO_TogPin(PINB4);
+    	GPIO_TogPin(PINB5);
+    	GPIO_TogPin(PINB6);
+    	GPIO_TogPin(PINB7);
+    	     GPIO_SetPinValue(PINB8,HIGH);
+    	     GPIO_SetPinValue(PINB9,HIGH);
+    	     GPIO_SetPinValue(PINB10,HIGH);
+    	     GPIO_SetPinValue(PINB11,HIGH);
+    	     GPIO_SetPinValue(PINB12,HIGH);
+    	     GPIO_SetPinValue(PINB13,HIGH);
+    	     GPIO_SetPinValue(PINB14,HIGH);
+    	     GPIO_SetPinValue(PINB15,HIGH);
+    	     GPIO_SetPinValue(PINC13,HIGH);
+    	     GPIO_SetPinValue(PINC14,HIGH);
+    	     GPIO_SetPinValue(PINC15,HIGH);
+
+
+    	     for(u16 i=0;i<500;i++);
+
+    	     GPIO_SetPinValue(PINA0,LOW);
+
+    }
+
+
+
+}
+
+

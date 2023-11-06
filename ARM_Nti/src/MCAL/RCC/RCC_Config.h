@@ -14,7 +14,7 @@
 3-RCC_HSE_RC
 4-RCC_PLL
  */
-#define   RCC_CLOCK_TYPE          RCC_HSE_CRYSTAL
+#define   RCC_CLOCK_TYPE          RCC_HSI
 
 /*System clock switch
  *  1-HSI_SC
@@ -22,7 +22,7 @@
  * 3-PLL_SC
  * 4-NOT_ALLOWED
  */
-#define   RCC_SYSTEM_CLOCK_SWITCH   HSE_SC
+#define   RCC_SYSTEM_CLOCK_SWITCH   HSI_SC
 
 /*
   RCC_PLL_SOURCE

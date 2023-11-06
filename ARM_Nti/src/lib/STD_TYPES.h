@@ -22,6 +22,11 @@ typedef int                 i32;
 typedef unsigned long int   u32;
 typedef signed long int     s32;
 
+typedef long long            l64;
+typedef unsigned long long   u64;
+typedef signed long long     s64;
+
+
 typedef float               f32;
 typedef double              f64;
 

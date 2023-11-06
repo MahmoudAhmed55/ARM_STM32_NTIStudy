@@ -1,0 +1,25 @@
+/*
+ * main.c
+ *
+ *  Created on: Nov 2, 2023
+ *      Author: Mahmoud Ahmed Ismail
+ */
+
+#include "lib/STD_TYPES.h"
+#include "lib/BIT_MATH.h"
+
+#include "MCAL/RCC/RCC_Interface.h"
+#include "MCAL/GPIO/GPIO_Interface.h"
+
+void main(void)
+{
+	RCC_InitClockSystem();
+	RCC_EnableClock(APB2,IOPA);
+	RCC_EnableClock(APB2,IOPB);
+	RCC_EnableClock(APB2,IOPC);
+
+
+
+}
+
+

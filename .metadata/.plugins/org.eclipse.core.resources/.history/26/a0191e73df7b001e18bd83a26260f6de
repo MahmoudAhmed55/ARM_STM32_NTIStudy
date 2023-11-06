@@ -1,0 +1,88 @@
+
+
+#ifndef _GPIO_INTERFACE_H_
+#define _GPIO_INTERFACE_H_
+
+typedef enum
+{
+	PA=0,
+	PB,
+	PC,
+}Port_t;
+typedef enum
+{
+	PINA0=0,
+	PINA1,
+	PINA2,
+	PINA3,
+	PINA4,
+	PINA5,
+	PINA6,
+	PINA7,
+	PINA8,
+	PINA9,
+	PINA10,
+	PINA11,
+	PINA12,
+	PINA13,
+	PINA14,
+	PINA15,
+	PINB0,
+	PINB1,
+	PINB2,
+	PINB3,
+	PINB4,
+	PINB5,
+	PINB6,
+	PINB7,
+	PINB8,
+	PINB9,
+	PINB10,
+	PINB11,
+	PINB12,
+	PINB13,
+	PINB14,
+	PINB15,
+	PINC0,
+	PINC1,
+	PINC2,
+TOTAL_PINS,
+}Pin_t;
+
+
+typedef enum
+{
+	INPUT_ANALOG=0,
+	OUTPUT10KHZ_PUSHPALL,
+	OUTPUT2KHZ_PUSHPALL,
+	OUTPUT50KHZ_PUSHPALL,
+	INPUT_FLOATING,
+	OUTPUT10KHZ_OPENDRAIN,
+	OUTPUT2KHZ_OPENDRAIN,
+	OUTPUT50KHZ_OPENDRAIN,
+	INPUT_PULL_UP_DOWN,
+	OUTPUT10KHZ_AF_PUSHPALL,
+	OUTPUT2KHZ_AF_PUSHPALL,
+	OUTPUT50KHZ_AF_PUSHPALL,
+	INPUT_RESERVED,
+	OUTPUT10KHZ_AF_OPENDRAIN,
+	OUTPUT2KHZ_AF_OPENDRAIN,
+	OUTPUT50KHZ_AF_OPENDRAIN,
+}MODE_CNF_t;
+
+typedef enum
+{
+	LOW=0,
+	HIGH,
+}Pin_Value_t;
+
+void GPIO_SetPinDirection(Port_t port,Pin_t pin,MODE_CNF_t mode);
+void GPIO_SetPinValue(Port_t port,Pin_t pin,Pin_Value_t value);
+void GPIO_TogPin(Port_t port,Pin_t pin);
+u8 GPIO_GetPinValue(Port_t  port,Pin_t  pin);
+
+void GPIO_SetPortDirection(Port_t port,MODE_CNF_t mode);
+void GPIO_SetPortValue(Port_t port,u32 value);
+
+
+#endif
