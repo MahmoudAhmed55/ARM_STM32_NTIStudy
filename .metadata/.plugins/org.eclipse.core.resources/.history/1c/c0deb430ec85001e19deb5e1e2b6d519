@@ -40,6 +40,7 @@ void TIMER1_SetCallBack(void(*ptr)(void))
 
 void TIM1_UP_IRQHandler(void)
 {
+
 	PTR1();
 	CLR_BIT(TIMx_SR,UIF);
 }

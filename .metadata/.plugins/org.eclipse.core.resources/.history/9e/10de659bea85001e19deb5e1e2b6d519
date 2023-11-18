@@ -16,9 +16,9 @@ void TIMER_Init(void)
 {
 	CLR_BIT(TIMER_CR1,DIR);  // UP_COUNTING
 
-	TIMx_PSC=36;          // prescaler 1M
+	TIMx_PSC=5000;          // prescaler 1M
 
-	TIMx_ARR=40000;        //OVF
+	TIMx_ARR=4000;        //OVF
 
 	SIT_BIT(TIMER_CR1,CEN);  // UP_COUNTING
 }
@@ -38,8 +38,9 @@ void TIMER1_SetCallBack(void(*ptr)(void))
 
 }
 
-void TIM1_UP_IRQHandler(void)
+void TIM1_IRQHandler(void)
 {
+
 	PTR1();
 	CLR_BIT(TIMx_SR,UIF);
 }

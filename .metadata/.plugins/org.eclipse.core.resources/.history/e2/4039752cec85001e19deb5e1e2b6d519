@@ -15,6 +15,6 @@ void TIMER_Init(void);
 void TIMER_InterruptEnable(void);
 void TIMER_InterruptDisable(void);
 void TIMER1_SetCallBack(void(*ptr)(void));
-void TIM1_UP_IRQHandler(void);
+void TIMER1_IRQHandler(void);
 
 #endif /* MCAL_TIMER_TIMER_INTERFACE_H_ */
