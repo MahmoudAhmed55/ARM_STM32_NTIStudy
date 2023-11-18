@@ -1,0 +1,15 @@
+/*
+ * Timer_Program.c
+ *
+ *  Created on: Nov 17, 2023
+ *      Author: lenovo
+ */
+
+#include "../../lib/STD_TYPES.h"
+#include "../../lib/BIT_MATH.h"
+#include "TIMER_Interface.h"
+#include "TIMER_Private.h"
+//#include "SPI_Config.h"
+
+
+

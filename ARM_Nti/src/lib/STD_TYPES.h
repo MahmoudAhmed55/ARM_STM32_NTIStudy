@@ -32,5 +32,7 @@ typedef double              f64;
 
 
 
+#define NULL_PTR   (void*)(0)
+
 
 #endif

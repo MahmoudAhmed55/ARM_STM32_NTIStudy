@@ -1,0 +1,15 @@
+/*
+ * SPI_Private.h
+ *
+ *  Created on: Nov 16, 2023
+ *      Author: lenovo
+ */
+
+#ifndef MCAL_SPI_SPI_PRIVATE_H_
+#define MCAL_SPI_SPI_PRIVATE_H_
+
+
+
+
+
+#endif /* MCAL_SPI_SPI_PRIVATE_H_ */

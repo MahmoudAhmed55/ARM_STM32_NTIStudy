@@ -1,0 +1,34 @@
+/*
+ * SPI_Private.h
+ *
+ *  Created on: Nov 16, 2023
+ *      Author: lenovo
+ */
+
+#ifndef MCAL_SPI_SPI_PRIVATE_H_
+#define MCAL_SPI_SPI_PRIVATE_H_
+
+#define   SPI_BASEADDRESS      (0x40013000)
+
+#define SPI_CR1                      *((volatile u32*) (SPI_BASEADDRESS +0x00))
+
+#define MSTR   3
+
+#define SPI_CR2                      *((volatile u32*) (SPI_BASEADDRESS +0x04))
+#define SPI_SR                       *((volatile u32*) (SPI_BASEADDRESS +0x08))
+#define SPI_DR                       *((volatile u32*) (SPI_BASEADDRESS +0x0C))
+
+
+#define SPI_CRCPR                    *((volatile u32*) (SPI_BASEADDRESS +0x10))
+#define SPI_RXCRCR                   *((volatile u32*) (SPI_BASEADDRESS +0x14))
+#define SPI_TXCRCR                   *((volatile u32*) (SPI_BASEADDRESS +0x0C))
+#define SPI_I2SCFGR                  *((volatile u32*) (SPI_BASEADDRESS +0x10))
+#define SPI_I2SPR                    *((volatile u32*) (SPI_BASEADDRESS +0x14))
+
+
+#define SLAVE 0
+
+#define MASTER 1
+
+
+#endif /* MCAL_SPI_SPI_PRIVATE_H_ */

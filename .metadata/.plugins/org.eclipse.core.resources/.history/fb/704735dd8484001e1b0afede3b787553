@@ -1,0 +1,39 @@
+/*
+ * SPI_Program.c
+ *
+ *  Created on: Nov 16, 2023
+ *      Author: lenovo
+ */
+
+#include "../../lib/STD_TYPES.h"
+#include "../../lib/BIT_MATH.h"
+#include "SPI_Interface.h"
+#include "SPI_Private.h"
+#include "SPI_Config.h"
+
+void SPI1_Init(void)
+{
+
+	//ENABLE SPI1
+	SIT_BIT(SPI_CR1,SPE);
+	// clock phase 0 read then write
+    // polarity    0 Rising
+#if SPI1==MASTER
+
+	 // master Enable
+	SIT_BIT(SPI_CR1,MSTR);
+	 //
+	SPI_CR1=(SPI1_CLOCK<<3)^SPI_CR1;
+
+#elif SPI1==SLAVE
+
+	CLR_BIT(SPI_CR1,MSTR);
+
+#endif
+}
+
+u8 SPI1_SendReciveSynch(u8 data);
+
+void SPI1_SendReciveASynch(u8 data,void(*CallBack)(u8));
+
+

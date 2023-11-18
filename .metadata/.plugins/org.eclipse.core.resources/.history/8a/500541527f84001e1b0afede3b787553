@@ -1,0 +1,17 @@
+/*
+ * SPI_Interface.h
+ *
+ *  Created on: Nov 16, 2023
+ *      Author: lenovo
+ */
+
+#ifndef MCAL_SPI_SPI_INTERFACE_H_
+#define MCAL_SPI_SPI_INTERFACE_H_
+
+
+void SPI1_Init(void);
+
+u8 SPI1_SendReciveSynch(u8 data);
+
+
+#endif /* MCAL_SPI_SPI_INTERFACE_H_ */

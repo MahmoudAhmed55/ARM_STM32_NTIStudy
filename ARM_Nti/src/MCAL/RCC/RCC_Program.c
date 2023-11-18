@@ -1,13 +1,9 @@
 
-
-
 #include "../../lib/STD_TYPES.h"
 #include "../../lib/BIT_MATH.h"
 #include "RCC_Interface.h"
 #include "RCC_Private.h"
 #include "RCC_Config.h"
-
-
 
 
 void RCC_InitClockSystem(void)

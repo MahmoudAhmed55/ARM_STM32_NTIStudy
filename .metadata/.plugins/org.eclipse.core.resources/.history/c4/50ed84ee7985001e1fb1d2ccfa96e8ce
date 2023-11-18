@@ -1,0 +1,33 @@
+/*
+ * TIMER_Private.h
+ *
+ *  Created on: Nov 17, 2023
+ *      Author: lenovo
+ */
+
+#ifndef MCAL_TIMER_TIMER_PRIVATE_H_
+#define MCAL_TIMER_TIMER_PRIVATE_H_
+
+#define   TIMER_BASEADDRESS      (0x40013000)
+
+
+#define TIMER_CR1                       *((volatile u32*) (TIMER_BASEADDRESS +0x00))
+#define CEN     0
+#define UDIS    1
+#define URS     2
+#define DIR		4
+#define CMS0	5
+#define CMS1	6
+#define APPE    7
+#define TIMER_CR2                       *((volatile u32*) (TIMER_BASEADDRESS +0x04))
+
+#define TIMx_SR                         *((volatile u32*) (TIMER_BASEADDRESS +0x10))
+#define UIF    0    // OV INTERRUPT
+
+#define TIMx_CNT                          *((volatile u32*) (TIMER_BASEADDRESS +0x24))
+#define TIMx_PSC                          *((volatile u32*) (TIMER_BASEADDRESS +0x28))
+#define TIMx_ARR                          *((volatile u32*) (TIMER_BASEADDRESS +0x2C))
+#define TIMx_CCMR1                        *((volatile u32*) (TIMER_BASEADDRESS +0x18))
+
+
+#endif /* MCAL_TIMER_TIMER_PRIVATE_H_ */

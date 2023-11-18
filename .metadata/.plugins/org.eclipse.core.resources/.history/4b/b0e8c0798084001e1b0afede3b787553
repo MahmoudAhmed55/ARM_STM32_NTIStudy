@@ -1,0 +1,23 @@
+/*
+ * SPI_Private.h
+ *
+ *  Created on: Nov 16, 2023
+ *      Author: lenovo
+ */
+
+#ifndef MCAL_SPI_SPI_PRIVATE_H_
+#define MCAL_SPI_SPI_PRIVATE_H_
+
+#define   SPI_BASEADDRESS      (0x40013000)
+
+#define SPI_IMR                     *((volatile u32*) (EXI_BASEADDRESS +0x00))
+#define SPI_EMR                     *((volatile u32*) (EXI_BASEADDRESS +0x04))
+#define SPI_RTSR                    *((volatile u32*) (EXI_BASEADDRESS +0x08))
+#define SPI_FTSR                    *((volatile u32*) (EXI_BASEADDRESS +0x0C))
+#define SPI_SWIER                   *((volatile u32*) (EXI_BASEADDRESS +0x10))
+#define SPI_PR                      *((volatile u32*) (EXI_BASEADDRESS +0x14))
+
+
+
+
+#endif /* MCAL_SPI_SPI_PRIVATE_H_ */
