@@ -1,0 +1,47 @@
+/*
+ * SYSTICK_Program.c
+ *
+ *  Created on: Nov 8, 2023
+ *      Author: lenovo
+ */
+
+#include "../../lib/STD_TYPES.h"
+#include "../../lib/BIT_MATH.h"
+#include "SYSTICK_Interface.h"
+#include "SYSTIC_Private.h"
+
+void SYSTICK_Init(void)
+{
+	SIT_BIT(STK_CTRL,0);    //ENABLE SYSTICK
+
+	//SIT_BIT(STK_CTRL,1);  //SYSTICK_INTERRUPT
+
+	CLR_BIT(STK_CTRL,2);    /* IF SIT CLOCK=AHB ,IF CLR CLOCK=AHB/8*/
+}
+
+void SYSTICK_BusyWait(u32 ticks)
+{
+	STK_LOAD=ticks;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*void SysTick_Handler(void)
+{
+
+}*/

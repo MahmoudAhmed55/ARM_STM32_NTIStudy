@@ -6,16 +6,16 @@
 #include "GPIO_Config.h"
 
  const MODE_CNF_t DIO_PinsStatusArr[TOTAL_PINS]={
-		 OUTPUT2MHZ_PUSHPALL,      /* Port A Pin 0 */
-		 OUTPUT2MHZ_PUSHPALL,          /* Port A Pin 1 */
-		 OUTPUT2MHZ_PUSHPALL,      /* Port A Pin 2 */
-		 OUTPUT2MHZ_PUSHPALL,      /* Port A Pin 3 */
-		 OUTPUT2MHZ_PUSHPALL,      /* Port A Pin 4 */
-		 OUTPUT2MHZ_PUSHPALL,      /* Port A Pin 5 */
-		 OUTPUT2MHZ_PUSHPALL,      /* Port A Pin 6 */
-		 OUTPUT2MHZ_PUSHPALL,      /* Port A Pin 7 */
-		 OUTPUT2MHZ_PUSHPALL,      /* Port A Pin 8 */
-		 OUTPUT2MHZ_PUSHPALL,      /* Port A Pin 9 */
+		 OUTPUT10KHZ_PUSHPALL,      /* Port A Pin 0 */
+		 OUTPUT10KHZ_PUSHPALL,     /* Port A Pin 1 */
+		 OUTPUT10KHZ_PUSHPALL,      /* Port A Pin 2 */
+		 OUTPUT10KHZ_PUSHPALL,      /* Port A Pin 3 */
+		 OUTPUT10KHZ_PUSHPALL,      /* Port A Pin 4 */
+		 OUTPUT10KHZ_PUSHPALL,      /* Port A Pin 5 */
+		 OUTPUT10KHZ_PUSHPALL,      /* Port A Pin 6 */
+		 OUTPUT10KHZ_PUSHPALL,      /* Port A Pin 7 */
+		 OUTPUT10KHZ_PUSHPALL,      /* Port A Pin 8 */
+		 OUTPUT10KHZ_PUSHPALL,      /* Port A Pin 9 */
 		 OUTPUT2MHZ_PUSHPALL,      /* Port A Pin 10 */
 		 OUTPUT2MHZ_PUSHPALL,     /* Port A Pin 11 */
 		 OUTPUT2MHZ_PUSHPALL,      /* Port A Pin 12 */
@@ -23,22 +23,22 @@
 		 OUTPUT2MHZ_PUSHPALL,      /* Port A Pin 14 */
 		 OUTPUT2MHZ_PUSHPALL,      /* Port A Pin 15 */
 
-		 OUTPUT2MHZ_PUSHPALL,      /* Port B Pin 0 */
-		 INPUT_PULL_UP_DOWN,      /* Port B Pin 1 */
-		 INPUT_PULL_UP_DOWN,      /* Port B Pin 2 */
-		 INPUT_PULL_UP_DOWN,      /* Port B Pin 3 */
-		 INPUT_PULL_UP_DOWN,      /* Port B Pin 4 */
-		 INPUT_PULL_UP_DOWN,      /* Port B Pin 5 */
-		 INPUT_PULL_UP_DOWN,      /* Port B Pin 6 */
-		 INPUT_PULL_UP_DOWN,      /* Port B Pin 7 */
-		 INPUT_PULL_UP_DOWN,      /* Port B Pin 8 */
+		 OUTPUT10KHZ_PUSHPALL,      /* Port B Pin 0 */
+		 OUTPUT10KHZ_PUSHPALL,      /* Port B Pin 1 */
+		 OUTPUT10KHZ_PUSHPALL,      /* Port B Pin 2 */
+		 OUTPUT10KHZ_PUSHPALL,      /* Port B Pin 3 */
+		 OUTPUT10KHZ_PUSHPALL,      /* Port B Pin 4 */
+		 OUTPUT10KHZ_PUSHPALL,      /* Port B Pin 5 */
+		 OUTPUT10KHZ_PUSHPALL,      /* Port B Pin 6 */
+		 OUTPUT10KHZ_PUSHPALL,      /* Port B Pin 7 */
+		 OUTPUT10KHZ_PUSHPALL,      /* Port B Pin 8 */
 		 INPUT_PULL_UP_DOWN,      /* Port B Pin 9 */
 		 INPUT_PULL_UP_DOWN,      /* Port B Pin 10 */
 		 INPUT_PULL_UP_DOWN,      /* Port B Pin 11 */
-		 INPUT_PULL_UP_DOWN,      /* Port B Pin 12 */
-		 INPUT_PULL_UP_DOWN,     /* Port B Pin 13 */
-		 INPUT_PULL_UP_DOWN,      /* Port B Pin 14 */
-		 INPUT_PULL_UP_DOWN,      /* Port B Pin 15 */
+		 INPUT_FLOATING,      /* Port B Pin 12 */
+		 INPUT_FLOATING,     /* Port B Pin 13 */
+		 INPUT_FLOATING,      /* Port B Pin 14 */
+		 INPUT_FLOATING,      /* Port B Pin 15 */
 
 		  OUTPUT2MHZ_PUSHPALL,      /* Port C Pin 13 */
 		  OUTPUT2MHZ_PUSHPALL,   /* Port C Pin 14*/

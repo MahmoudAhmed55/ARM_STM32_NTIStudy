@@ -1,0 +1,23 @@
+/*
+ * TIMER_Interface.h
+ *
+ *  Created on: Nov 17, 2023
+ *      Author: lenovo
+ */
+
+#ifndef MCAL_TIMER_TIMER_INTERFACE_H_
+#define MCAL_TIMER_TIMER_INTERFACE_H_
+
+
+
+void TIMER1_Init(void);
+void TIMER1_AutoReload(u16 over);
+
+void TIMER1_InterruptEnable(void);
+void TIMER1_InterruptDisable(void);
+void TIMER1_SetCallBack(void(*ptr)(void));
+void TIM1_UP_IRQHandler(void);
+
+void TIMER_ICU1InterruptEnable(void);
+void TIMER_ICU1InterruptDisable(void);
+#endif /* MCAL_TIMER_TIMER_INTERFACE_H_ */

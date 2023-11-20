@@ -1,0 +1,30 @@
+/*
+ * LCD_Config.h
+ *
+ *  Created on: Nov 19, 2023
+ *      Author: lenovo
+ */
+
+
+#ifndef HAL_LCD_LCD_CONFIG_H_
+#define HAL_LCD_LCD_CONFIG_H_
+
+
+#define LCD_PORT  PB
+#define RS        PINB0
+#define EN        PINB1
+
+#define _8_BIT    1
+#define _4_BIT    0
+
+#define LCD_MODE  _4_BIT
+
+
+#define D4  PINB2
+#define D5  PINB3
+#define D6  PINB4
+#define D7  PINB5
+
+
+
+#endif /* HAL_LCD_LCD_CONFIG_H_ */

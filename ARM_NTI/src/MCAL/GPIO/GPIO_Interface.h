@@ -4,8 +4,8 @@
 #define _GPIO_INTERFACE_H_
 
 #define TOTAL_PINS    35
-#define PORTB_B0       16
-#define PORTB_C13      19
+#define PORTB_B0      16
+#define PORTB_C13     19
 typedef enum
 {
 	PA=0,

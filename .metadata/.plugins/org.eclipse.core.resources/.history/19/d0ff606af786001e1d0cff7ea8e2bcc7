@@ -1,0 +1,253 @@
+/*
+ ============================================================================
+ Name        : LCD_program.c
+ Author      : Manar Hashem
+ Date		 : Oct 21, 2023
+ Version     : 1.0
+ Description : LCD_program source file
+ ============================================================================
+ */
+
+#include "../../lib/STD_TYPES.h"
+#include "../../lib/BIT_MATH.h"
+#include "../../MCAL/GPIO/GPIO_Interface.h"
+#include "../../MCAL/SYSTICK/SYSTICK_Interface.h"
+
+#include "LCD_interface.h"
+#include "LCD_config.h"
+#include "LCD_private.h"
+
+void LCD_VoidSendCommand(u8 Local_Command)
+{
+	/*send the command line*/
+	GPIO_SetPinValue( LCD_Data_PIN4, READ_BIT(Local_Command,4));
+	GPIO_SetPinValue( LCD_Data_PIN5, READ_BIT(Local_Command,5));
+	GPIO_SetPinValue( LCD_Data_PIN6, READ_BIT(Local_Command,6));
+	GPIO_SetPinValue( LCD_Data_PIN7, READ_BIT(Local_Command,7));
+	/*set RS pin to command --> 0*/
+	GPIO_SetPinValue(LCD_RS_Pin,LOW);
+	//GPIO_u8SetPinValue(LCD_RS_PORT,LCD_RS_Pin,GPIO_PIN_LOW);
+	//_delay_ms(1);
+	SYSTICK_BusyWait_Ms(1);
+
+	/*set Enable pin to High*/
+	GPIO_SetPinValue(LCD_EN_Pin,HIGH);
+	//GPIO_u8SetPinValue(LCD_EN_PORT,LCD_EN_Pin,GPIO_PIN_HIGH);
+	//_delay_ms(1);
+	SYSTICK_BusyWait_Ms(1);
+
+	/*set Enable pin to Low*/
+	GPIO_SetPinValue(LCD_EN_Pin,LOW);
+	//GPIO_u8SetPinValue(LCD_EN_PORT,LCD_EN_Pin,GPIO_PIN_LOW);
+	//_delay_ms(1);
+	SYSTICK_BusyWait_Ms(1);
+
+	/*send the command line*/
+	GPIO_SetPinValue( LCD_Data_PIN4, READ_BIT(Local_Command,0));
+	GPIO_SetPinValue( LCD_Data_PIN5, READ_BIT(Local_Command,1));
+	GPIO_SetPinValue( LCD_Data_PIN6, READ_BIT(Local_Command,2));
+	GPIO_SetPinValue( LCD_Data_PIN7, READ_BIT(Local_Command,3));
+
+	/*set Enable pin to High*/
+	GPIO_SetPinValue(LCD_EN_Pin,HIGH);
+	//GPIO_u8SetPinValue(LCD_EN_PORT,LCD_EN_Pin,GPIO_PIN_HIGH);
+	//_delay_ms(1);
+	SYSTICK_BusyWait_Ms(1);
+
+	/*set Enable pin to Low*/
+	GPIO_SetPinValue(LCD_EN_Pin,LOW);
+	//GPIO_u8SetPinValue(LCD_EN_PORT,LCD_EN_Pin,GPIO_PIN_LOW);
+	//_delay_ms(1);
+	SYSTICK_BusyWait_Ms(1);
+
+}
+
+
+void LCD_VoidSendData(u8 Local_Data)
+{
+	/*send the char line*/
+	GPIO_SetPinValue( LCD_Data_PIN4, READ_BIT(Local_Data,4));
+	GPIO_SetPinValue( LCD_Data_PIN5, READ_BIT(Local_Data,5));
+	GPIO_SetPinValue( LCD_Data_PIN6, READ_BIT(Local_Data,6));
+	GPIO_SetPinValue( LCD_Data_PIN7, READ_BIT(Local_Data,7));
+	/*set RS pin to command --> 0*/
+	GPIO_SetPinValue(LCD_RS_Pin,HIGH);
+	//GPIO_u8SetPinValue(LCD_RS_PORT,LCD_RS_Pin,GPIO_PIN_HIGH);
+	//_delay_ms(1);
+	SYSTICK_BusyWait_Ms(1);
+
+	/*set Enable pin to High*/
+	GPIO_SetPinValue(LCD_EN_Pin,HIGH);
+	//GPIO_u8SetPinValue(LCD_EN_PORT,LCD_EN_Pin,GPIO_PIN_HIGH);
+	//_delay_ms(1);
+	SYSTICK_BusyWait_Ms(1);
+
+	/*set Enable pin to Low*/
+	GPIO_SetPinValue(LCD_EN_Pin,LOW);
+	//GPIO_u8SetPinValue(LCD_EN_PORT,LCD_EN_Pin,GPIO_PIN_LOW);
+	//_delay_ms(1);
+	SYSTICK_BusyWait_Ms(1);
+
+	/*send the command line*/
+	GPIO_SetPinValue( LCD_Data_PIN4, READ_BIT(Local_Data,0));
+	GPIO_SetPinValue( LCD_Data_PIN5, READ_BIT(Local_Data,1));
+	GPIO_SetPinValue( LCD_Data_PIN6, READ_BIT(Local_Data,2));
+	GPIO_SetPinValue( LCD_Data_PIN7, READ_BIT(Local_Data,3));
+
+	/*set Enable pin to High*/
+	GPIO_SetPinValue(LCD_EN_Pin,HIGH);
+	//GPIO_u8SetPinValue(LCD_EN_PORT,LCD_EN_Pin,GPIO_PIN_HIGH);
+	//_delay_ms(1);
+	SYSTICK_BusyWait_Ms(1);
+
+	/*set Enable pin to Low*/
+	GPIO_SetPinValue(LCD_EN_Pin,LOW);
+	//GPIO_u8SetPinValue(LCD_EN_PORT,LCD_EN_Pin,GPIO_PIN_LOW);
+	//_delay_ms(1);
+	SYSTICK_BusyWait_Ms(1);
+
+}
+void LCD_Void4BitsInit(void)
+{
+	/*Select The Directions*/
+
+	GPIO_SetPinDirection(LCD_Data_PORT,LCD_Data_PIN4,OUTPUT10KHZ_AF_PUSHPALL);
+	GPIO_SetPinDirection(LCD_Data_PORT,LCD_Data_PIN5,OUTPUT10KHZ_AF_PUSHPALL);
+	GPIO_SetPinDirection(LCD_Data_PORT,LCD_Data_PIN6,OUTPUT10KHZ_AF_PUSHPALL);
+	GPIO_SetPinDirection(LCD_Data_PORT,LCD_Data_PIN7,OUTPUT10KHZ_AF_PUSHPALL);
+	/*GPIO_voidSetPinDirection(LCD_Data_PORT, LCD_Data_PIN4, PORT_OUPUT_10MHZ_PUSH_PULL);
+	GPIO_voidSetPinDirection(LCD_Data_PORT, LCD_Data_PIN5, PORT_OUPUT_10MHZ_PUSH_PULL);
+	GPIO_voidSetPinDirection(LCD_Data_PORT, LCD_Data_PIN6, PORT_OUPUT_10MHZ_PUSH_PULL);
+	GPIO_voidSetPinDirection(LCD_Data_PORT, LCD_Data_PIN7, PORT_OUPUT_10MHZ_PUSH_PULL);*/
+
+	GPIO_SetPinDirection(LCD_Data_PORT,LCD_RS_Pin,OUTPUT10KHZ_AF_PUSHPALL);
+	GPIO_SetPinDirection(LCD_Data_PORT,LCD_EN_Pin,OUTPUT10KHZ_AF_PUSHPALL);
+
+	/*GPIO_voidSetPinDirection(LCD_RS_PORT, LCD_RS_Pin, PORT_OUPUT_10MHZ_PUSH_PULL);
+	GPIO_voidSetPinDirection(LCD_EN_PORT, LCD_EN_Pin, PORT_OUPUT_10MHZ_PUSH_PULL);*/
+	//STK_voidInit();
+
+	//_delay_ms(20);
+	SYSTICK_BusyWait_Ms(20);
+
+	LCD_VoidSendCommand(0x33);
+	LCD_VoidSendCommand(0x32);
+	/*function set*/
+	LCD_VoidSendCommand(FUNCTION_SET_4BIT_2LINES_5X7_DOTS);
+	/*Display On off control*/
+	LCD_VoidSendCommand(DISPLAY_ON_CURSOR_OFF);
+	/*Clear LCD*/
+	LCD_VoidSendCommand(DISPLAY_CLEAR);
+	/*Entry Mode*/
+	LCD_VoidSendCommand(ENTRY_MODE_SET);
+}
+
+void LCD_VoidSendString(char* Ref_string)
+{
+	while (*Ref_string != '\0')
+	{
+		LCD_VoidSendData(*Ref_string);
+		Ref_string++;
+	}
+}
+
+void LCD_VoidSendNumber(u32 Local_Number)
+{
+	u32 Local_ReversedNum = 2;
+	while (Local_Number != 0)
+	{
+		Local_ReversedNum = (Local_ReversedNum * 10) + (Local_Number % 10);
+		Local_Number = Local_Number / 10;
+	}
+	do
+	{
+		LCD_VoidSendData((Local_ReversedNum%10)+ '0');
+		Local_ReversedNum /= 10;
+	}while(Local_ReversedNum != 2);
+}
+
+void LCD_VoidStartFrom(u8 Local_RowPosition, u8 Local_ColPosition)
+{
+	u8 Local_DDRAMAddress = 0;
+	if(Local_ColPosition < COLS_NUMBER && Local_RowPosition < ROWS_NUMBER)
+	{
+		if(Local_RowPosition == LINE_1)
+		{
+			Local_DDRAMAddress = 0x80 + Local_ColPosition;
+		}
+		else if(Local_RowPosition == LINE_2)
+		{
+			Local_DDRAMAddress = 0xC0 + Local_ColPosition;
+		}
+		else if(Local_RowPosition == LINE_3)
+		{
+			Local_DDRAMAddress = 0x94 + Local_ColPosition;
+		}
+		else if (Local_RowPosition == LINE_4)
+		{
+			Local_DDRAMAddress = 0xD4 + Local_ColPosition;
+
+		}
+		LCD_VoidSendCommand(Local_DDRAMAddress | SET_DDRAM_ADDRESS);
+	}
+}
+void LCD_VoidDisplayStrRowCol (u8 *Ref_str, u8 Local_RowPosition, u8 Local_ColPosition)
+{
+	LCD_VoidStartFrom(Local_RowPosition,Local_ColPosition);
+	LCD_VoidSendString(Ref_str);
+}
+
+void HLCD_voidDisplayNumber(u32 A_u32Number)
+{
+    u32 local_u32Number = 1;
+    if (A_u32Number == 0)
+    {
+        LCD_VoidSendData('0');
+    }
+    while (A_u32Number != 0)
+    {
+        local_u32Number = ((local_u32Number * 10) + (A_u32Number % 10));
+        A_u32Number = A_u32Number / 10;
+    }
+    while (local_u32Number != 1)
+    {
+        LCD_VoidSendData((local_u32Number % 10) + 48);
+        local_u32Number = local_u32Number / 10;
+    }
+}
+void LCD_intgerToString(int data)
+{
+   char buff[16]; /* String to hold the ascii result */
+   itoa(data,buff,10); /* Use itoa C function to convert the data to its corresponding ASCII value, 10 for decimal */
+   LCD_VoidSendString(buff); /* Display the string */
+}
+/*
+void LCD_VoidSendStringFromPos (char *Ref_string, u8 Local_RowPosition, u8 Local_ColPosition)
+{
+	u8 index = 0;
+	u8 line = 0;
+	LCD_VoidStartFrom(Local_RowPosition,Local_ColPosition);
+	while (Ref_string[index] != '\0' && ((Local_RowPosition * COLS_NUMBER) + (Local_ColPosition + index)) < TOTAL_BLOCKS_NUM)
+	{
+		if((Local_RowPosition * 20) + (Local_ColPosition + index) < COLS_NUMBER)
+		{
+			LCD_VoidSendData(Ref_string[index]);
+			index++;
+		}
+		else if((Local_RowPosition * 20) + (Local_ColPosition + index) == COLS_NUMBER && line == LINE_1)
+		{
+			LCD_VoidStartFrom(1,0);
+			line++;
+		}
+		else if((Local_RowPosition * 20) + (Local_ColPosition + index) == COLS_NUMBER && line == LINE_2)
+		{
+			LCD_VoidStartFrom(2,0);
+			line++;
+		}
+		else if((Local_RowPosition*20) + (Local_ColPosition + index) == COLS_NUMBER && line == LINE_3)
+		{
+			LCD_VoidStartFrom(3,0);
+			line++;
+		}
+	}
+}*/
