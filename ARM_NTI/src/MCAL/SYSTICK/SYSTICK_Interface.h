@@ -12,7 +12,7 @@
 void SYSTICK_Init(void);
 
 void SYSTICK_BusyWait_Us(u32 ticks);
-void SYSTICK_BusyWait_Ms(u32 ticks);
+void SYSTICK_BusyWait_Ms(u64 ticks);
 
 void SYSTICK_StopTimer(void);
 u32 SYSTICK_GetLIpsedTime(void);

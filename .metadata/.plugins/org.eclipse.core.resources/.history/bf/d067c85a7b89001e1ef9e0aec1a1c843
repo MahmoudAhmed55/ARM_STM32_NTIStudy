@@ -1,0 +1,32 @@
+src/main.o: ../src/main.c ../src/lib/STD_TYPES.h ../src/lib/BIT_MATH.h \
+ ../src/MCAL/RCC/RCC_Interface.h ../src/MCAL/GPIO/GPIO_Interface.h \
+ ../src/MCAL/NVIC/NVIC_Interface.h \
+ ../src/MCAL/SYSTICK/SYSTICK_Interface.h \
+ ../src/MCAL/EXI_Interrupt/EXI_Interrupt_Interface.h \
+ ../src/MCAL/AFIO/AFIO_Interface.h ../src/MCAL/TIMER/TIMER_Interface.h \
+ ../src/MCAL/TIMER/TIMER_Private.h ../src/MCAL/LCD/LCD_Interface.h \
+ ../src/MCAL/TIMER/TIMER_Services.h
+
+../src/lib/STD_TYPES.h:
+
+../src/lib/BIT_MATH.h:
+
+../src/MCAL/RCC/RCC_Interface.h:
+
+../src/MCAL/GPIO/GPIO_Interface.h:
+
+../src/MCAL/NVIC/NVIC_Interface.h:
+
+../src/MCAL/SYSTICK/SYSTICK_Interface.h:
+
+../src/MCAL/EXI_Interrupt/EXI_Interrupt_Interface.h:
+
+../src/MCAL/AFIO/AFIO_Interface.h:
+
+../src/MCAL/TIMER/TIMER_Interface.h:
+
+../src/MCAL/TIMER/TIMER_Private.h:
+
+../src/MCAL/LCD/LCD_Interface.h:
+
+../src/MCAL/TIMER/TIMER_Services.h:

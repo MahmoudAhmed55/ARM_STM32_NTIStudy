@@ -14,7 +14,7 @@ void RCC_InitClockSystem(void)
    #if RCC_CLOCK_TYPE==RCC_HSI
 	SIT_BIT(RCC_CR,HSI_ON);                  //Enable HSI.
 	SIT_BIT(RCC_CR,HSI_TRIM);                // TRIM FREQUANCY VALUE=16.
-	while(READ_BIT(RCC_CR,HSI_RDY));         //BUSY_WAIT waiting for HSI ready flag.
+	//while(READ_BIT(RCC_CR,HSI_RDY));         //BUSY_WAIT waiting for HSI ready flag.
 
    #elif  RCC_CLOCK_TYPE==RCC_HSE_CRYSTAL
 	SIT_BIT(RCC_CR,HSE_ON);                 //Enable HSE.

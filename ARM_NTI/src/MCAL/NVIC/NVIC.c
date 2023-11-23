@@ -22,11 +22,11 @@ void Interrupt_Set_Enable(Interrupt_t num)
 		num=num-32;
 		SIT_BIT(NVIC_ISER1,num);
 	}
-	else if (num>63&&num<68)
+	/*else if (num>63&&num<68)
 	{
 		num=num-64;
 		SIT_BIT(NVIC_ISER2,num);
-	}
+	}*/
 }
 
 void Interrupt_Clear_Enable(Interrupt_t num)
@@ -40,11 +40,11 @@ void Interrupt_Clear_Enable(Interrupt_t num)
 		num=num-32;
 		SIT_BIT(NVIC_ICER1,num);
 	}
-	else if (num>63&&num<68)
+	/*else if (num>63&&num<68)
 	{
 		num=num-64;
 		SIT_BIT(NVIC_ICER2,num);
-	}
+	}*/
 
 }
 
@@ -59,11 +59,11 @@ void Interrupt_Set_Pending(Interrupt_t num)
 		num=num-32;
 		SIT_BIT(NVIC_ISPR1,num);
 	}
-	else if (num>63&&num<68)
+	/*else if (num>63&&num<68)
 	{
 		num=num-64;
 		SIT_BIT(NVIC_ISPR2,num);
-	}
+	}*/
 }
 
 void Interrupt_Clear_Pending(Interrupt_t num)
@@ -77,11 +77,11 @@ void Interrupt_Clear_Pending(Interrupt_t num)
 		num=num-32;
 		SIT_BIT(NVIC_ICPR1,num);
 	}
-	else if (num>63&&num<68)
+	/*else if (num>63&&num<68)
 	{
 		num=num-64;
 		SIT_BIT(NVIC_ICPR2,num);
-	}
+	}*/
 }
 
 u8 Interrupt_Active_Bit(Interrupt_t num)
@@ -96,11 +96,11 @@ u8 Interrupt_Active_Bit(Interrupt_t num)
 		num=num-32;
 		read=READ_BIT(NVIC_IABR1,num);
 	}
-	else if (num>63&&num<68)
+	/*else if (num>63&&num<68)
 	{
 		num=num-64;
 		read=READ_BIT(NVIC_IABR2,num);
-	}
+	}*/
 	return read;
 }
 
@@ -167,6 +167,6 @@ void Set_InterruptPriority2(c8 id,u8 group,c8 sub,u32 Priority_Group)
 	// EXI_INTERRUPTSS ONLY
 	if (id>=0)
 	{
-		NVIC_IPR_PTR[id]=local_priority<<4;
+		NVIC_IPR_PTR[id]=(local_priority<<4);
 	}
 }

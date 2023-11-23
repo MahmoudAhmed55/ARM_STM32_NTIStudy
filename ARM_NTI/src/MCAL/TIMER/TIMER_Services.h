@@ -8,8 +8,8 @@
 #ifndef SERVICES_TIMER_SERVICES_H_
 #define SERVICES_TIMER_SERVICES_H_
 
-void PWM_Measure(u32* Pfreq,u8* Pduty,u32 timeout);
-static void Func_ICU(void);
+void PWM_Measure(u32* Pfreq,u8* Pduty,u32 time);
+ void Func_ICU(void);
 
 
 

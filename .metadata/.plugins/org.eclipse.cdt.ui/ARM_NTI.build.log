@@ -1,8 +1,15 @@
-09:26:02 **** Incremental Build of configuration Release for project ARM_NTI ****
+23:02:42 **** Incremental Build of configuration Release for project ARM_NTI ****
 make all 
 Building file: ../src/main.c
 Invoking: Cross ARM GNU C Compiler
 arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -Wall -Wextra  -g -DNDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:76:5: warning: unused variable 'duty' [-Wunused-variable]
+  u8 duty=0;
+     ^~~~
+../src/main.c:75:6: warning: unused variable 'freq' [-Wunused-variable]
+  u32 freq=0;
+      ^~~~
 Finished building: ../src/main.c
  
 Building target: ARM_NTI.elf
@@ -17,9 +24,9 @@ Finished building: ARM_NTI.hex
 Invoking: Cross ARM GNU Print Size
 arm-none-eabi-size --format=berkeley "ARM_NTI.elf"
    text	   data	    bss	    dec	    hex	filename
-   2013	     68	    276	   2357	    935	ARM_NTI.elf
+   2966	     68	    288	   3322	    cfa	ARM_NTI.elf
 Finished building: ARM_NTI.siz
  
 
-09:26:07 Build Finished (took 5s.447ms)
+23:02:44 Build Finished (took 1s.413ms)
 

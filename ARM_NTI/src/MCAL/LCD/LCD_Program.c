@@ -14,6 +14,7 @@
 #include "../GPIO/GPIO_Interface.h"
 #include "../TIMER/TIMER_Interface.h"
 
+
 #if LCD_MODE==_8_BIT
 
 static void WriteIns(u8 ins)

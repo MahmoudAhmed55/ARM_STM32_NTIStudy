@@ -9,7 +9,6 @@
 #ifndef  _RCC_Interface_H_
 #define  _RCC_Interface_H_
 
-#include "../../lib/STD_TYPES.h"
 
 typedef enum
 {

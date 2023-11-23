@@ -2,30 +2,30 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="SYSTICK_BusyWait_Ms" key="selection"/>
+		<item value="OUTPUT50MHZ_PUSHPALL" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="_delay_ms"/>
+			<item value="OUTPUT2MHZ_PUSHPALL"/>
+			<item value="INPUT_FLOATING"/>
+			<item value="INPUT_PULL_UP_DOWN"/>
+			<item value="OUTPUT10KHZ_AF_PUSHPALL"/>
 			<item value="SYSTICK_BusyWait_Ms"/>
-			<item value="SYSTICK_BusyWait_Us"/>
-			<item value="SYSTICK_BusyWait_Ms(1);"/>
-			<item value="DIO_WritePin"/>
-			<item value="GET_BIT"/>
-			<item value="STK_voidDelay"/>
-			<item value="GPIO_u8SetPinValue(LCD_RS_PORT,LCD_RS_Pin,GPIO_PIN_LOW);"/>
+			<item value="Delay_vMsIn16MHz"/>
+			<item value="OUTPUT10KHZ_PUSHPALL"/>
+			<item value="_delay_ms"/>
 		</list>
 		<list key="replacehistory">
+			<item value="OUTPUT50MHZ_PUSHPALL"/>
+			<item value="OUTPUT2MHZ_PUSHPALL"/>
+			<item value="INPUT_FLOATING"/>
+			<item value="Delay_vMsIn16MHz"/>
 			<item value="SYSTICK_BusyWait_Ms"/>
 			<item value="_delay_ms"/>
 			<item value="SYSTICK_BusyWait_Us(800);"/>
 			<item value="GPIO_SetPinValue"/>
-			<item value="READ_BIT"/>
-			<item value="_Us(500)"/>
-			<item value="_Us"/>
-			<item value="SYSTICK_BusyWait_Ms(1);"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

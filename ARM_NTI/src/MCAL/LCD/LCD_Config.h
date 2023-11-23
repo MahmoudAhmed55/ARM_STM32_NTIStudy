@@ -20,7 +20,7 @@
 #define D4  PINA0
 #define D5  PINA1
 #define D6  PINA2
-#define D7  PINA3
+#define D7  PINA6
 
 
 
