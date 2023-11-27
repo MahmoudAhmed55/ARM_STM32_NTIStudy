@@ -2,12 +2,13 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="OUTPUT50MHZ_PUSHPALL" key="selection"/>
+		<item value="TIMER_CR2" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="TIMER_CR2"/>
 			<item value="OUTPUT2MHZ_PUSHPALL"/>
 			<item value="INPUT_FLOATING"/>
 			<item value="INPUT_PULL_UP_DOWN"/>
@@ -15,7 +16,6 @@
 			<item value="SYSTICK_BusyWait_Ms"/>
 			<item value="Delay_vMsIn16MHz"/>
 			<item value="OUTPUT10KHZ_PUSHPALL"/>
-			<item value="_delay_ms"/>
 		</list>
 		<list key="replacehistory">
 			<item value="OUTPUT50MHZ_PUSHPALL"/>

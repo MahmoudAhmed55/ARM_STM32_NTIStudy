@@ -1,20 +1,13 @@
-23:02:42 **** Incremental Build of configuration Release for project ARM_NTI ****
+01:28:34 **** Incremental Build of configuration Release for project ARM_NTI ****
 make all 
 Building file: ../src/main.c
 Invoking: Cross ARM GNU C Compiler
 arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -Wall -Wextra  -g -DNDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
-../src/main.c: In function 'main':
-../src/main.c:76:5: warning: unused variable 'duty' [-Wunused-variable]
-  u8 duty=0;
-     ^~~~
-../src/main.c:75:6: warning: unused variable 'freq' [-Wunused-variable]
-  u32 freq=0;
-      ^~~~
 Finished building: ../src/main.c
  
 Building target: ARM_NTI.elf
 Invoking: Cross ARM GNU C++ Linker
-arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -Wall -Wextra  -g -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"ARM_NTI.map" --specs=nano.specs -o "ARM_NTI.elf"  ./system/src/stm32f1-stdperiph/misc.o ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f10x.o ./system/src/cmsis/vectors_stm32f10x.o  ./src/MCAL/TIMER/TIMER_Services.o ./src/MCAL/TIMER/Timer_Program.o  ./src/MCAL/SYSTICK/SYSTICK_Program.o  ./src/MCAL/SPI/SPI_Program.o  ./src/MCAL/RCC/RCC_Program.o  ./src/MCAL/NVIC/NVIC.o  ./src/MCAL/LCD/LCD_Program.o  ./src/MCAL/GPIO/GPIO_Program.o  ./src/MCAL/EXI_INTERRUPT/EX_Interrupt.o  ./src/MCAL/DMA/DMA_Program.o  ./src/MCAL/AFIO/AFIO.o  ./src/main.o   
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -Wall -Wextra  -g -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"ARM_NTI.map" --specs=nano.specs -o "ARM_NTI.elf"  ./system/src/stm32f1-stdperiph/misc.o ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f10x.o ./system/src/cmsis/vectors_stm32f10x.o  ./src/MCAL/TIMER/TIMER_Services.o ./src/MCAL/TIMER/Timer_Program.o  ./src/MCAL/SYSTICK/SYSTICK_Program.o  ./src/MCAL/SPI/SPI_Program.o  ./src/MCAL/RCC/RCC_Program.o  ./src/MCAL/NVIC/NVIC.o  ./src/MCAL/GPIO/GPIO_Program.o  ./src/MCAL/EXI_INTERRUPT/EX_Interrupt.o  ./src/MCAL/DMA/DMA_Program.o  ./src/MCAL/AFIO/AFIO.o  ./src/HAL/MOTOR/MOTOR_Program.o  ./src/HAL/LCD/LCD_Program.o  ./src/main.o   
 Finished building target: ARM_NTI.elf
  
 Invoking: Cross ARM GNU Create Flash Image
@@ -24,9 +17,9 @@ Finished building: ARM_NTI.hex
 Invoking: Cross ARM GNU Print Size
 arm-none-eabi-size --format=berkeley "ARM_NTI.elf"
    text	   data	    bss	    dec	    hex	filename
-   2966	     68	    288	   3322	    cfa	ARM_NTI.elf
+   2956	     68	    296	   3320	    cf8	ARM_NTI.elf
 Finished building: ARM_NTI.siz
  
 
-23:02:44 Build Finished (took 1s.413ms)
+01:28:36 Build Finished (took 2s.132ms)
 

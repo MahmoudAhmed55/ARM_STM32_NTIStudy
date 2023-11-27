@@ -12,7 +12,6 @@
 #include "TIMER_Private.h"
 #include "../GPIO/GPIO_Interface.h"
 #include "../SYSTICK/SYSTICK_Interface.h"
-#include "../LCD/LCD_Interface.h"
 #include "TIMER_Private.h"
 static volatile u32 t1=0,t2=0,t3=0,flag=0,c1=0;
 

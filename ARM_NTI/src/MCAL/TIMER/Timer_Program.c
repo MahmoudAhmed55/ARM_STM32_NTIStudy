@@ -21,33 +21,31 @@ void TIMER1_Init(void)
 {
 	CLR_BIT(TIMER_CR1,DIR);                // UP_COUNTING
 
-	TIMx_PSC=71;                         // prescalLer 1M
+	TIMx_PSC=7;                         // prescalLer 1M
 
-	SIT_BIT(TIMER_CR1,7);	                //enable autoreload
-	TIMx_ARR=0XFFFF;
 	SIT_BIT(TIMER_CR1,CEN);                  // Enable TIMER1
 }
 
-void TIMER1_AutoReload(u32 over)
+void TIMER1_AutoReload(u16 over)
 {
-	TIMx_ARR=over;        //OVF
 	SIT_BIT(TIMER_CR1,7);
+	TIMx_ARR=over;        //OVF
 }
 
 void TIMER1_ICU1Init(void)
 {
-	CLR_BIT(TIMER_CR1,CEN);    // Disable TIMER1
+	CLR_BIT(TIMER_CR1,CEN);                // Disable TIMER1
+	CLR_BIT(TIMER_CR1,DIR);                // UP_COUNTING
 
-	SIT_BIT(TIMx_CCMR1,CC1S); //active ch1 ICU as input
-	SIT_BIT(TIMx_CCMR1,1);
+	TIMx_PSC=7;                            // prescalLer 1M
 
-	/*SIT_BIT(TIMx_CCMR1,IC1F); //FILTER DURATION 8 SAMPLE
-	SIT_BIT(TIMx_CCMR1,5);*/
+	SIT_BIT(TIMx_CCMR1,CC1S);              //active ch1 ICU as input
 
-	CLR_BIT(TIMx_CCMR1,IC1PSC); //no prescalLer,capture is done eachtime an edge is detected on the capture input
+
+	CLR_BIT(TIMx_CCMR1,IC1PSC);            //no prescalLer,capture is done eachtime an edge is detected on the capture input
 	CLR_BIT(TIMx_CCMR1,3);
 
-	CLR_BIT(TIMx_CCER,CC1P);    //RISING EDGE
+	CLR_BIT(TIMx_CCER,CC1P);                  //RISING EDGE
 
 	SIT_BIT(TIMx_CCER,CC1E);  //ENABLE ICU
 
@@ -56,22 +54,21 @@ void TIMER1_ICU1Init(void)
 
 void TIMER1_ICUI2nit(void)
 {
-	//TIMER_CR2
 
-	CLR_BIT(TIMER_CR1,CEN);    // Disable TIMER1
 
-	CLR_BIT(TIMER_CR2,7);//CH1 T1 SELECT
+	//CLR_BIT(TIMER_CR1,CEN);    // Disable TIMER1
 
 	SIT_BIT(TIMx_CCMR1,1); //active ch2 ICU as input
 
-	CLR_BIT(TIMx_CCMR1,IC1PSC); //no prescalLer,capture is done eachtime an edge is detected on the capture input
-	CLR_BIT(TIMx_CCMR1,3);
+	/*CLR_BIT(TIMx_CCMR1,IC1PSC); //no prescalLer,capture is done eachtime an edge is detected on the capture input
+	CLR_BIT(TIMx_CCMR1,3);*/
 
-	SIT_BIT(TIMx_CCER,CC1P);    //RISING EDGE
 
-	SIT_BIT(TIMx_CCER,CC1E);  //ENABLE ICU
+	SIT_BIT(TIMx_CCER,CC1P);    //FALLING EDGE
 
-	SIT_BIT(TIMER_CR1,CEN);    // Enable TIMER1
+	SIT_BIT(TIMx_CCER,4);  //ENABLE ICU
+
+	//SIT_BIT(TIMER_CR1,CEN);    // Enable TIMER1
 }
 
 void Timer1_InputCaptureEdge(Trig_t trig)
@@ -79,8 +76,10 @@ void Timer1_InputCaptureEdge(Trig_t trig)
 	switch (trig)
 	{
 	case RISING_TIMER:CLR_BIT(TIMx_CCER,CC1P);              //RISING EDGE
+	CLR_BIT(TIMx_CCER,CC1P);
 	break;
 	case FALLING_TIMER:SIT_BIT(TIMx_CCER,CC1P);             //FALLING EDGE
+	SIT_BIT(TIMx_CCER,CC1P);
 	break;
 	}
 }
@@ -95,18 +94,26 @@ void TIMER1_InterruptDisable(void)
 	CLR_BIT(TIMx_DIER,UIE);
 }
 
-
+/*The current value of the counter is captured in TIMx_CCR1 register. The CC1IF flag is set,
+the corresponding interrupt or DMA request is sent if enabled. The CC1OF flag is set if the
+CC1IF flag was already high.*/
 void TIMER1_ICU1InterruptEnable(void)
 {
+	/*TIMx_EGR=0xffff;
+	TIMx_DIER=0xffff;*/
 	SIT_BIT(TIMx_EGR,1);
 	SIT_BIT(TIMx_DIER,CC1IE);
-	SIT_BIT(TIMx_DIER,UIE);
+	SIT_BIT(TIMx_DIER,0);
+	SIT_BIT(TIMx_EGR,0);
+	//SIT_BIT(TIMx_DIER,UIE);
+	//CLR_BIT(TIMx_DIER,5);*/
 }
 void TIMER1_ICU1InterruptDisable(void)
 {
 	CLR_BIT(TIMx_EGR,1);
 	CLR_BIT(TIMx_DIER,CC1IE);
-	CLR_BIT(TIMx_DIER,5);
+	CLR_BIT(TIMx_DIER,0);
+	CLR_BIT(TIMx_EGR,0);
 
 }
 

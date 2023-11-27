@@ -28,6 +28,7 @@ typedef enum
 	LN14,
 	LN15,
 }Lin_t;
+
 typedef enum
 {
 	RISING=0,

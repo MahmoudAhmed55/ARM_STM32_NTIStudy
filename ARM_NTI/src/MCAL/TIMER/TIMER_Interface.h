@@ -17,7 +17,7 @@ typedef enum
 }Trig_t;
 u32 TIMER1_Count(void);
 void TIMER1_Init(void);
-void TIMER1_AutoReload(u32 over);
+void TIMER1_AutoReload(u16 over);
 void TIMER1_ICU1Init(void);
 void TIMER1_ICUI2nit(void);
 void Timer1_InputCaptureEdge(Trig_t trig);

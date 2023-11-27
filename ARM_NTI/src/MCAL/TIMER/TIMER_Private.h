@@ -37,13 +37,14 @@
 #define CC2S      9  //IC2 is mapped on TI1 8->9
 
 
-#define TIMx_CCER                        *((volatile u32*) (TIMER1_BASEADDRESS +0x18)) // rising or falling(cc1p)
+#define TIMx_CCER                        (*((volatile u32*) (TIMER1_BASEADDRESS +0x18))) // rising or falling(cc1p)
 #define  CC1E     0 //ENABLE ICU
 #define  CC1P     1 // ICU RISINGOR
 #define  CC2P     5 // ICU FALLING
 
-#define TIMx_CCR1                        *((volatile u32*) (TIMER1_BASEADDRESS +0x34))
-
+#define TIMx_CCR1                        (*((volatile u32*) (TIMER1_BASEADDRESS +0x34)))
+#define TIMx_CCR2                        (*((volatile u32*) (TIMER1_BASEADDRESS +0x38)))
+#define TIMx_RCR                        (*((volatile u32*) (TIMER1_BASEADDRESS +0x30)))
 #define TIMx_DIER                        *((volatile u32*) (TIMER1_BASEADDRESS +0x0c))//ICU interrupt
 #define UIE    0    // OV INTERRUPT
 #define CC1IE  1    //ICU INTERRUPT

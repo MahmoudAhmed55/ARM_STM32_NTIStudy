@@ -1,0 +1,14 @@
+src/MCAL/NVIC/NVIC.o: ../src/MCAL/NVIC/NVIC.c \
+ ../src/MCAL/NVIC/../../lib/STD_TYPES.h \
+ ../src/MCAL/NVIC/../../lib/BIT_MATH.h ../src/MCAL/NVIC/NVIC_Interface.h \
+ ../src/MCAL/NVIC/NVIC_Private.h ../src/MCAL/NVIC/NVIC_Config.h
+
+../src/MCAL/NVIC/../../lib/STD_TYPES.h:
+
+../src/MCAL/NVIC/../../lib/BIT_MATH.h:
+
+../src/MCAL/NVIC/NVIC_Interface.h:
+
+../src/MCAL/NVIC/NVIC_Private.h:
+
+../src/MCAL/NVIC/NVIC_Config.h:

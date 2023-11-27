@@ -1,0 +1,21 @@
+src/MCAL/TIMER/TIMER_Services.o: ../src/MCAL/TIMER/TIMER_Services.c \
+ ../src/MCAL/TIMER/../../lib/STD_TYPES.h \
+ ../src/MCAL/TIMER/../../lib/BIT_MATH.h \
+ ../src/MCAL/TIMER/TIMER_Services.h ../src/MCAL/TIMER/TIMER_Interface.h \
+ ../src/MCAL/TIMER/TIMER_Private.h \
+ ../src/MCAL/TIMER/../GPIO/GPIO_Interface.h \
+ ../src/MCAL/TIMER/../SYSTICK/SYSTICK_Interface.h
+
+../src/MCAL/TIMER/../../lib/STD_TYPES.h:
+
+../src/MCAL/TIMER/../../lib/BIT_MATH.h:
+
+../src/MCAL/TIMER/TIMER_Services.h:
+
+../src/MCAL/TIMER/TIMER_Interface.h:
+
+../src/MCAL/TIMER/TIMER_Private.h:
+
+../src/MCAL/TIMER/../GPIO/GPIO_Interface.h:
+
+../src/MCAL/TIMER/../SYSTICK/SYSTICK_Interface.h:
