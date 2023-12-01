@@ -6,17 +6,17 @@
 #include "GPIO_Config.h"
 
 const MODE_CNF_t DIO_PinsStatusArr[TOTAL_PINS]={
-		INPUT_FLOATING,      /* Port A Pin 0 */
-		OUTPUT50MHZ_PUSHPALL,     /* Port A Pin 1 */
+		OUTPUT2MHZ_PUSHPALL,      /* Port A Pin 0 */
+		OUTPUT10KHZ_PUSHPALL,     /* Port A Pin 1 */
 		OUTPUT50MHZ_PUSHPALL,      /* Port A Pin 2 */
 		OUTPUT50MHZ_PUSHPALL,      /* Port A Pin 3 */
 		OUTPUT50MHZ_PUSHPALL,      /* Port A Pin 4 */
 		OUTPUT50MHZ_PUSHPALL,      /* Port A Pin 5 */
 		OUTPUT50MHZ_PUSHPALL,      /* Port A Pin 6 */
 		OUTPUT2MHZ_PUSHPALL,      /* Port A Pin 7 */
-		INPUT_FLOATING,           /* Port A Pin 8 */
-		OUTPUT50MHZ_PUSHPALL,      /* Port A Pin 9 */
-		OUTPUT50MHZ_PUSHPALL,      /* Port A Pin 10 */
+		OUTPUT2MHZ_PUSHPALL,           /* Port A Pin 8 */
+		OUTPUT2MHZ_AF_PUSHPALL,       /* Port A Pin 9 */
+		INPUT_FLOATING,            /* Port A Pin 10 */
 		OUTPUT50MHZ_PUSHPALL,     /* Port A Pin 11 */
 		OUTPUT50MHZ_PUSHPALL,      /* Port A Pin 12 */
 		OUTPUT50MHZ_PUSHPALL,      /* Port A Pin 13 */
@@ -27,9 +27,9 @@ const MODE_CNF_t DIO_PinsStatusArr[TOTAL_PINS]={
 		OUTPUT2MHZ_PUSHPALL,      /* Port B Pin 1 */
 		OUTPUT2MHZ_PUSHPALL,      /* Port B Pin 2 */
 		OUTPUT2MHZ_PUSHPALL,      /* Port B Pin 3 */
-		OUTPUT50MHZ_PUSHPALL,      /* Port B Pin 4 */
-		OUTPUT50MHZ_PUSHPALL,      /* Port B Pin 5 */
-		OUTPUT50MHZ_PUSHPALL,           /* Port B Pin 6 */
+		OUTPUT2MHZ_PUSHPALL,      /* Port B Pin 4 */
+		OUTPUT2MHZ_PUSHPALL,      /* Port B Pin 5 */
+		OUTPUT2MHZ_PUSHPALL,           /* Port B Pin 6 */
 		OUTPUT50MHZ_PUSHPALL,      /* Port B Pin 7 */
 		OUTPUT50MHZ_PUSHPALL,      /* Port B Pin 8 */
 		OUTPUT50MHZ_PUSHPALL,      /* Port B Pin 9 */

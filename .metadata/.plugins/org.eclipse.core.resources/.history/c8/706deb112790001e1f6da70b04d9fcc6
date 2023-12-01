@@ -1,0 +1,24 @@
+/*
+ * UART_Interface.h
+ *
+ *  Created on: Nov 29, 2023
+ *      Author: lenovo
+ */
+
+#ifndef MCAL_UART_UART_INTERFACE_H_
+#define MCAL_UART_UART_INTERFACE_H_
+
+void UART_Init(void);
+void UART_Transmit(c8* data);
+u8 UART_Recieve(void);
+void UART_Send_String(c8*str);
+void UART_Recive_String(c8*str);
+
+void UART_RX_InterruptEnable(void);
+void UART_RX_InterruptDisable(void);
+void UART_TX_InterruptEnable(void);
+void UART_TX_InterruptDisable(void);
+void UART_RX_SetCallBack(void (*LocalFptr)(void));
+void UART_TX_SetCallBack(void (*LocalFptr)(void));
+void USART1_IRQHandler(void);
+#endif /* MCAL_UART_UART_INTERFACE_H_ */

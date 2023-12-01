@@ -1,0 +1,73 @@
+/*
+ * main.c
+ *
+ *  Created on: Nov 2, 2023
+ *      Author: Mahmoud Ahmed Ismail
+ */
+
+#include "lib/STD_TYPES.h"
+#include "lib/BIT_MATH.h"
+
+#include "MCAL/RCC/RCC_Interface.h"
+#include "MCAL/GPIO/GPIO_Interface.h"
+#include "MCAL/NVIC/NVIC_Interface.h"
+#include "MCAL/SYSTICK/SYSTICK_Interface.h"
+#include "MCAL/EXI_Interrupt/EXI_Interrupt_Interface.h"
+#include "MCAL/AFIO/AFIO_Interface.h"
+#include "MCAL/TIMER/TIMER_Interface.h"
+#include "HAL/LCD/LCD_Interface.h"
+#include "MCAL/TIMER/TIMER_Services.h"
+#include "MCAL/UART/UART_Interface.h"
+
+volatile u8 x='1';
+void uart(void)
+{
+	GPIO_SetPinValue(PINB5,HIGH);
+	x=UART_Recieve();
+}
+
+
+void main(void)
+{
+	//__enable_irq();
+	RCC_InitClockSystem();
+	RCC_EnableClock(APB2,AFIO_EN);
+	RCC_EnableClock(APB2,IOPA);
+	RCC_EnableClock(APB2,IOPB);
+	RCC_EnableClock(APB2,IOPC);
+	RCC_EnableClock(APB2,USART);
+
+	DIO_Init();
+	SYSTICK_Init();
+	UART_Init();
+	LCD_Init();
+
+	Interrupt_Set_Enable(USART1);
+	UART_TX_InterruptEnable();
+	UART_TX_SetCallBack(uart);
+
+
+	LCD_GoTo(0,0);
+	LCD_WriteString("UART");
+
+
+	u8 data='1';
+
+	UART_Transmit('a');
+	while (1)
+	{
+
+
+		if (x=='0')
+		{
+			GPIO_TogPin(PINB3);
+		}
+
+
+	}
+}
+
+
+
+
+

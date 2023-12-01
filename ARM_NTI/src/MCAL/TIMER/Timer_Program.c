@@ -103,8 +103,8 @@ void TIMER1_ICU1InterruptEnable(void)
 	TIMx_DIER=0xffff;*/
 	SIT_BIT(TIMx_EGR,1);
 	SIT_BIT(TIMx_DIER,CC1IE);
-	SIT_BIT(TIMx_DIER,0);
-	SIT_BIT(TIMx_EGR,0);
+	//SIT_BIT(TIMx_DIER,0);
+	//SIT_BIT(TIMx_EGR,0);
 	//SIT_BIT(TIMx_DIER,UIE);
 	//CLR_BIT(TIMx_DIER,5);*/
 }
@@ -112,8 +112,8 @@ void TIMER1_ICU1InterruptDisable(void)
 {
 	CLR_BIT(TIMx_EGR,1);
 	CLR_BIT(TIMx_DIER,CC1IE);
-	CLR_BIT(TIMx_DIER,0);
-	CLR_BIT(TIMx_EGR,0);
+	//CLR_BIT(TIMx_DIER,0);
+	//CLR_BIT(TIMx_EGR,0);
 
 }
 

@@ -85,7 +85,6 @@ void SYSTICK_IntervalPeriodic(u32 ticks,void(*ptr)(void))
 	PTR=ptr;
 }
 
-
 void SysTick_Handler(void)
 {
 	PTR();

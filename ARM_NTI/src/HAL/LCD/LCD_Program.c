@@ -1,17 +1,18 @@
 /*
  * LCD_Program.c
  *
- *  Created on: Nov 19, 2023
- *      Author: lenovo
+ * Created: 10/21/2023 10:34:07 AM
+ *  Author: Mahmoud Ahmed Ismail
  */
-
-
 #include "../../lib/STD_TYPES.h"
 #include "../../lib/BIT_MATH.h"
+
 #include "LCD_Config.h"
 #include "LCD_Interface.h"
-#include "../../MCAL/SYSTICK/SYSTICK_Interface.h"
 #include "../../MCAL/GPIO/GPIO_Interface.h"
+#include "../../MCAL/SYSTICK/SYSTICK_Interface.h"
+
+
 
 
 #if LCD_MODE==_8_BIT
@@ -229,4 +230,3 @@ void LCD_WriteHex(u8 num)
 		LCD_WriteChar(LN-10+'A');
 	}
 }
-
