@@ -11,7 +11,7 @@
 void LCD_Init(void);
 void LCD_Clear(void);
 void LCD_WriteChar(u8 ch);
-void LCD_WriteString(c8*str);
+void LCD_WriteString(char*str);
 void LCD_GoTo(u8 line,u8 cell);
 void LCD_WriteNumber(s32 num);
 void LCD_Write4D(s16 num);

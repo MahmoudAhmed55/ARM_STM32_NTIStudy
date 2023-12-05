@@ -2,30 +2,30 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="SYSTICK_BusyWait_Ms" key="selection"/>
+		<item value="GPIO_SetPinValue" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="_delay_ms"/>
 			<item value="DIO_WritePin"/>
+			<item value="LCD_PORT"/>
+			<item value="DIO_WritePort"/>
+			<item value="_delay_ms"/>
 			<item value="TIMER_CR2"/>
 			<item value="OUTPUT2MHZ_PUSHPALL"/>
 			<item value="INPUT_FLOATING"/>
 			<item value="INPUT_PULL_UP_DOWN"/>
-			<item value="OUTPUT10KHZ_AF_PUSHPALL"/>
-			<item value="SYSTICK_BusyWait_Ms"/>
 		</list>
 		<list key="replacehistory">
-			<item value="SYSTICK_BusyWait_Ms"/>
 			<item value="GPIO_SetPinValue"/>
+			<item value="PA"/>
+			<item value="GPIO_SetPortValue"/>
+			<item value="SYSTICK_BusyWait_Ms"/>
 			<item value="OUTPUT50MHZ_PUSHPALL"/>
 			<item value="OUTPUT2MHZ_PUSHPALL"/>
 			<item value="INPUT_FLOATING"/>
 			<item value="Delay_vMsIn16MHz"/>
-			<item value="_delay_ms"/>
-			<item value="SYSTICK_BusyWait_Us(800);"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

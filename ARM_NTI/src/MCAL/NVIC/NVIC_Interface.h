@@ -44,6 +44,7 @@ typedef enum
 	TIM1_UP,
 	TIM1_TRG_COM,
 	TIM1_CC,
+	TIM2,
 	TIM3,
 	TIM4,
     I2C1_EV,

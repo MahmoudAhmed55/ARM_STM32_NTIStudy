@@ -19,8 +19,9 @@
 
 static void WriteIns(u8 ins)
 {
+
 	GPIO_SetPinValue(RS,LOW);
-	DIO_WritePort(LCD_PORT,ins);
+	GPIO_SetPortValue(LCD_PORT,ins);
 	GPIO_SetPinValue(EN,HIGH);
 	SYSTICK_BusyWait_Ms(1);
 	GPIO_SetPinValue(EN,LOW);
@@ -30,7 +31,7 @@ static void WriteIns(u8 ins)
 static void WriteData(u8 data)
 {
 	GPIO_SetPinValue(RS,HIGH);
-	DIO_WritePort(LCD_PORT,data);
+	GPIO_SetPortValue(LCD_PORT,data);
 	GPIO_SetPinValue(EN,HIGH);
 	SYSTICK_BusyWait_Ms(1);
 	GPIO_SetPinValue(EN,LOW);
@@ -142,7 +143,7 @@ void LCD_GoTo(u8 line,u8 cell)
 }
 
 
-void LCD_WriteString(c8*str)
+void LCD_WriteString(char*str)
 {
 	u8 i;
 	for (i=0;str[i];i++)

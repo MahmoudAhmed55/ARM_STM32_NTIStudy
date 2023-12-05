@@ -9,8 +9,8 @@
 #define HAL_ESP_ESP_INTERFACE_H_
 
 void ESP_Init(void);
-void ESP_Connect(void);
+u8 ESP_Get(void);
+void ESP_Post(u8 data);
 
-
-
+void RX(void);
 #endif /* HAL_ESP_ESP_INTERFACE_H_ */

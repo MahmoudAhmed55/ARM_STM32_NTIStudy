@@ -13,28 +13,45 @@
 #include "../../MCAL/UART/UART_Interface.h"
 #include "../../MCAL/SYSTICK/SYSTICK_Interface.h"
 
+extern volatile c8 str[1000];
+extern volatile u8 i;
+
 void ESP_Init(void)
 {
-	//ECHO_DISABLE:
 	UART_Send_String("ATE0\r\n");
-
-	//DELAY FOR OK ESP:
-	SYSTICK_BusyWait_Ms(2000);
-
-	//ENABLE ESP STATION MODE :
-	UART_Send_String("AT+CWMODE=1\r\n");
-
-	//DELAY FOR OK ESP:
-	SYSTICK_BusyWait_Ms(2000);
-
+	SYSTICK_BusyWait_Ms(10);
 }
 
-void ESP_Connect(void)
+u8 ESP_Get(void)
 {
-	UART_Send_String("AT+CWJAP_CUR=M&S,Ms01551320444@\r\n");
+	UART_Send_String("AT+CIPSTART=\"TCP\",\"185.176.43.108\",80\r\n");
+	SYSTICK_BusyWait_Ms(100);
+	UART_Send_String("AT+CIPSEND=55\r\n");
+	SYSTICK_BusyWait_Ms(100);
+	UART_Send_String("GET http://ntigreaters.scienceontheweb.net/status.txt\r\n");
+	i=0;
+	SYSTICK_BusyWait_Ms(300);
+
+	return str[37];
 }
 
+void ESP_Post(u8 data)
+{
+	u8 arr[]={'l','e','d','=',data,'\r','\n'};
 
-
-
+	UART_Send_String("AT+CIPSTART=\"TCP\",\"185.176.43.108\",80\r\n");
+	SYSTICK_BusyWait_Ms(10);
+	UART_Send_String("AT+CIPSEND=142\r\n");
+	SYSTICK_BusyWait_Ms(10);
+	UART_Send_String("POST /script.php HTTP/1.1\r\n");
+	SYSTICK_BusyWait_Ms(10);
+	UART_Send_String("Host: ntigreaters.scienceontheweb.net\r\n");
+	SYSTICK_BusyWait_Ms(10);
+	UART_Send_String("Content-Type: application/x-www-form-urlencoded\r\n");
+	SYSTICK_BusyWait_Ms(10);
+	UART_Send_String("Content-Length: 6\r\n");
+	SYSTICK_BusyWait_Ms(10);
+	UART_Send_String(arr);
+	SYSTICK_BusyWait_Ms(10);
+}
 
