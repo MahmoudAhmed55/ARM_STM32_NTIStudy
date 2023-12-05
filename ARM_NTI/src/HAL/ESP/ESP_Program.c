@@ -13,7 +13,7 @@
 #include "../../MCAL/UART/UART_Interface.h"
 #include "../../MCAL/SYSTICK/SYSTICK_Interface.h"
 
-extern volatile c8 str[1000];
+extern volatile c8 str[100];
 extern volatile u8 i;
 
 void ESP_Init(void)
@@ -25,12 +25,12 @@ void ESP_Init(void)
 u8 ESP_Get(void)
 {
 	UART_Send_String("AT+CIPSTART=\"TCP\",\"185.176.43.108\",80\r\n");
-	SYSTICK_BusyWait_Ms(100);
+	SYSTICK_BusyWait_Ms(10);
 	UART_Send_String("AT+CIPSEND=55\r\n");
-	SYSTICK_BusyWait_Ms(100);
+	SYSTICK_BusyWait_Ms(10);
 	UART_Send_String("GET http://ntigreaters.scienceontheweb.net/status.txt\r\n");
 	i=0;
-	SYSTICK_BusyWait_Ms(300);
+	SYSTICK_BusyWait_Ms(150);
 
 	return str[37];
 }
@@ -38,6 +38,7 @@ u8 ESP_Get(void)
 void ESP_Post(u8 data)
 {
 	u8 arr[]={'l','e','d','=',data,'\r','\n'};
+
 
 	UART_Send_String("AT+CIPSTART=\"TCP\",\"185.176.43.108\",80\r\n");
 	SYSTICK_BusyWait_Ms(10);
@@ -51,7 +52,9 @@ void ESP_Post(u8 data)
 	SYSTICK_BusyWait_Ms(10);
 	UART_Send_String("Content-Length: 6\r\n");
 	SYSTICK_BusyWait_Ms(10);
-	UART_Send_String(arr);
+	UART_Send_String("\r\n");
 	SYSTICK_BusyWait_Ms(10);
+	UART_Send_String(arr);
+	SYSTICK_BusyWait_Ms(100);
 }
 

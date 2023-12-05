@@ -1,33 +1,11 @@
-10:06:26 **** Incremental Build of configuration Release for project ARM_NTI ****
+12:55:10 **** Incremental Build of configuration Release for project ARM_NTI ****
 make all 
-Building file: ../src/HAL/ESP/ESP_Program.c
-Invoking: Cross ARM GNU C Compiler
-arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -Wall -Wextra  -g -DNDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu11 -MMD -MP -MF"src/HAL/ESP/ESP_Program.d" -MT"src/HAL/ESP/ESP_Program.o" -c -o "src/HAL/ESP/ESP_Program.o" "../src/HAL/ESP/ESP_Program.c"
-../src/HAL/ESP/ESP_Program.c: In function 'ESP_Post':
-../src/HAL/ESP/ESP_Program.c:54:19: warning: pointer targets in passing argument 1 of 'UART_Send_String' differ in signedness [-Wpointer-sign]
-  UART_Send_String(arr);
-                   ^~~
-In file included from ../src/HAL/ESP/ESP_Program.c:13:0:
-../src/HAL/ESP/../../MCAL/UART/UART_Interface.h:15:6: note: expected 'c8 * {aka char *}' but argument is of type 'u8 * {aka unsigned char *}'
- void UART_Send_String(c8*str);
-      ^~~~~~~~~~~~~~~~
-Finished building: ../src/HAL/ESP/ESP_Program.c
- 
-Building target: ARM_NTI.elf
-Invoking: Cross ARM GNU C++ Linker
-arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -Wall -Wextra  -g -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"ARM_NTI.map" --specs=nano.specs -o "ARM_NTI.elf"  ./system/src/stm32f1-stdperiph/misc.o ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f10x.o ./system/src/cmsis/vectors_stm32f10x.o  ./src/MCAL/UART/UART_Program.o  ./src/MCAL/TIMER/TIMER_Services.o ./src/MCAL/TIMER/Timer_Program.o  ./src/MCAL/SYSTICK/SYSTICK_Program.o  ./src/MCAL/SPI/SPI_Program.o  ./src/MCAL/RCC/RCC_Program.o  ./src/MCAL/NVIC/NVIC.o  ./src/MCAL/GPIO/GPIO_Program.o  ./src/MCAL/EXI_INTERRUPT/EX_Interrupt.o  ./src/MCAL/DMA/DMA_Program.o  ./src/MCAL/AFIO/AFIO.o  ./src/HAL/MOTOR/MOTOR_Program.o  ./src/HAL/LCD/LCD_Program.o  ./src/HAL/ESP/ESP_Program.o  ./src/APP/VtoI/VtoI.o  ./src/main.o   
-Finished building target: ARM_NTI.elf
- 
-Invoking: Cross ARM GNU Create Flash Image
-arm-none-eabi-objcopy -O ihex "ARM_NTI.elf"  "ARM_NTI.hex"
-Finished building: ARM_NTI.hex
- 
 Invoking: Cross ARM GNU Print Size
 arm-none-eabi-size --format=berkeley "ARM_NTI.elf"
    text	   data	    bss	    dec	    hex	filename
-   2865	   1068	    284	   4217	   1079	ARM_NTI.elf
+   2516	    168	    284	   2968	    b98	ARM_NTI.elf
 Finished building: ARM_NTI.siz
  
 
-10:06:29 Build Finished (took 3s.454ms)
+12:55:11 Build Finished (took 573ms)
 
