@@ -6,13 +6,13 @@
 #include "GPIO_Config.h"
 
 const MODE_CNF_t DIO_PinsStatusArr[TOTAL_PINS]={
-		OUTPUT50MHZ_PUSHPALL,      /* Port A Pin 0 */
+		INPUT_FLOATING,      /* Port A Pin 0 */
 		OUTPUT50MHZ_PUSHPALL,     /* Port A Pin 1 */
 		OUTPUT50MHZ_PUSHPALL,      /* Port A Pin 2 */
 		OUTPUT50MHZ_PUSHPALL,      /* Port A Pin 3 */
 		OUTPUT50MHZ_PUSHPALL,      /* Port A Pin 4 */
 		OUTPUT50MHZ_PUSHPALL,      /* Port A Pin 5 */
-		OUTPUT50MHZ_PUSHPALL,      /* Port A Pin 6 */
+		OUTPUT10KHZ_AF_PUSHPALL,      /* Port A Pin 6 */
 		OUTPUT50MHZ_PUSHPALL,      /* Port A Pin 7 */
 		OUTPUT50MHZ_PUSHPALL,           /* Port A Pin 8 */
 		OUTPUT2MHZ_AF_PUSHPALL,       /* Port A Pin 9 */

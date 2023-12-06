@@ -17,8 +17,8 @@
 
 #define LCD_MODE  _4_BIT
 
-#define D4  PINA0
-#define D5  PINA1
+#define D4  PINA8
+#define D5  PINA7
 #define D6  PINA2
 #define D7  PINA3
 

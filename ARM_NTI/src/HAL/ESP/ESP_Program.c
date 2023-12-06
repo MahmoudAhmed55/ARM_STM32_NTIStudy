@@ -41,20 +41,22 @@ void ESP_Post(u8 data)
 
 
 	UART_Send_String("AT+CIPSTART=\"TCP\",\"185.176.43.108\",80\r\n");
-	SYSTICK_BusyWait_Ms(10);
+	SYSTICK_BusyWait_Ms(500);
 	UART_Send_String("AT+CIPSEND=142\r\n");
-	SYSTICK_BusyWait_Ms(10);
+	SYSTICK_BusyWait_Ms(500);
 	UART_Send_String("POST /script.php HTTP/1.1\r\n");
-	SYSTICK_BusyWait_Ms(10);
+	SYSTICK_BusyWait_Ms(500);
 	UART_Send_String("Host: ntigreaters.scienceontheweb.net\r\n");
-	SYSTICK_BusyWait_Ms(10);
+	SYSTICK_BusyWait_Ms(500);
 	UART_Send_String("Content-Type: application/x-www-form-urlencoded\r\n");
-	SYSTICK_BusyWait_Ms(10);
+	SYSTICK_BusyWait_Ms(500);
 	UART_Send_String("Content-Length: 6\r\n");
-	SYSTICK_BusyWait_Ms(10);
+	SYSTICK_BusyWait_Ms(500);
 	UART_Send_String("\r\n");
 	SYSTICK_BusyWait_Ms(10);
 	UART_Send_String(arr);
-	SYSTICK_BusyWait_Ms(100);
+	SYSTICK_BusyWait_Ms(500);
+	/*UART_Send_String("AT+CIPCLOSE\r\n");
+	SYSTICK_BusyWait_Ms(300);*/
 }
 
