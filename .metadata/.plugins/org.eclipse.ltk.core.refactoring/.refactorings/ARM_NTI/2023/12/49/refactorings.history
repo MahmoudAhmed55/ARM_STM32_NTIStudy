@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;ARM_NTI/src/MCAL/TIMER2/TIMER_PRIVATE.h&apos; to &apos;TIMER2_PRIVATE.h&apos;" description="Rename resource &apos;TIMER_PRIVATE.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/MCAL/TIMER2/TIMER_PRIVATE.h" name="TIMER2_PRIVATE.h" stamp="1701896296662" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;ARM_NTI/src/MCAL/TIMER2&apos; to &apos;TIMER&apos;" description="Rename resource &apos;TIMER2&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/MCAL/TIMER2" name="TIMER" stamp="1701896328636" updateReferences="true"/>
+</session>

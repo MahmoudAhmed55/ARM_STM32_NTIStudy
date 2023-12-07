@@ -10,7 +10,7 @@
 
 void ESP_Init(void);
 u8 ESP_Get(void);
-void ESP_Post(u8 data);
+void ESP_Post(c8 data);
 
 void RX(void);
 #endif /* HAL_ESP_ESP_INTERFACE_H_ */

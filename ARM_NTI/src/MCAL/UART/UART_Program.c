@@ -14,7 +14,7 @@ static void(*UART_TX_Fptr)(void)=NULL_PTR;
 void UART_Init(void)
 {
 	//BAUD RATE:
-	USART_BRR=0X45;  //115200 baud rate IS 0X45   9600 baud rate is 0x341
+	USART_BRR=0x45;  //115200 baud rate IS 0X45   9600 baud rate is 0x341
 
 	//ENABLE TX:
 	SIT_BIT(USART_CR1,3);

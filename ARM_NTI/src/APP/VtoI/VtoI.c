@@ -35,3 +35,17 @@ void Car_Stop(void)
 	MOTOR_Stop(M3);
 	MOTOR_Stop(M4);
 }
+void MOVE_RIGHT(void)
+{
+	MOTOR_CW(M1);
+	MOTOR_CW(M3);
+	MOTOR_Stop(M2);
+	MOTOR_Stop(M4);
+}
+void MOVE_LEFT(void)
+{
+	MOTOR_Stop(M1);
+	MOTOR_Stop(M3);
+	MOTOR_CW(M2);
+	MOTOR_CW(M4);
+}

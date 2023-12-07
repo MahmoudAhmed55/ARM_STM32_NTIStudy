@@ -2,30 +2,30 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="FALLING_t" key="selection"/>
+		<item value="SIT_BIT" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="SET_BIT"/>
+			<item value="_delay_us"/>
+			<item value="OUTPUT_SPEED_2MHZ_PP"/>
+			<item value="INPUT_PULLUP_PULLDOWN"/>
+			<item value="MGPIO_voidSetPinDirection"/>
 			<item value="FALLING"/>
 			<item value="RISING"/>
-			<item value="SET_BIT"/>
 			<item value="ESP_Get()"/>
-			<item value="DIO_WritePin"/>
-			<item value="LCD_PORT"/>
-			<item value="DIO_WritePort"/>
-			<item value="_delay_ms"/>
 		</list>
 		<list key="replacehistory">
+			<item value="SIT_BIT"/>
+			<item value="SYSTICK_BusyWait_Us"/>
+			<item value="OUTPUT50MHZ_PUSHPALL"/>
+			<item value="INPUT_PULL_UP_DOWN"/>
+			<item value="GPIO_SetPinDirection"/>
 			<item value="FALLING_t"/>
 			<item value="RISING_t"/>
-			<item value="SIT_BIT"/>
 			<item value="x"/>
-			<item value="GPIO_SetPinValue"/>
-			<item value="PA"/>
-			<item value="GPIO_SetPortValue"/>
-			<item value="SYSTICK_BusyWait_Ms"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

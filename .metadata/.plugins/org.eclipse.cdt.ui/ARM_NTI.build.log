@@ -1,29 +1,11 @@
-12:55:48 **** Incremental Build of configuration Debug for project ARM_NTI ****
+11:11:55 **** Incremental Build of configuration Debug for project ARM_NTI ****
 make all 
-Building file: ../src/MCAL/TIMER/TIMER_PROGRAM.c
-Invoking: Cross ARM GNU C Compiler
-arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu11 -MMD -MP -MF"src/MCAL/TIMER/TIMER_PROGRAM.d" -MT"src/MCAL/TIMER/TIMER_PROGRAM.o" -c -o "src/MCAL/TIMER/TIMER_PROGRAM.o" "../src/MCAL/TIMER/TIMER_PROGRAM.c"
-../src/MCAL/TIMER/TIMER_PROGRAM.c: In function 'MTIMER_u16GetCaptureValue':
-../src/MCAL/TIMER/TIMER_PROGRAM.c:962:9: warning: 'Local_u16CaptureValue' may be used uninitialized in this function [-Wmaybe-uninitialized]
-  return Local_u16CaptureValue;
-         ^~~~~~~~~~~~~~~~~~~~~
-Finished building: ../src/MCAL/TIMER/TIMER_PROGRAM.c
- 
-Building target: ARM_NTI.elf
-Invoking: Cross ARM GNU C++ Linker
-arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"ARM_NTI.map" --specs=nano.specs -o "ARM_NTI.elf"  ./system/src/stm32f1-stdperiph/misc.o ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f10x.o ./system/src/cmsis/vectors_stm32f10x.o  ./src/MCAL/UART/UART_Program.o  ./src/MCAL/TIMER/TIMER_PROGRAM.o  ./src/MCAL/SYSTICK/SYSTICK_Program.o  ./src/MCAL/SPI/SPI_Program.o  ./src/MCAL/RCC/RCC_Program.o  ./src/MCAL/NVIC/NVIC.o  ./src/MCAL/GPIO/GPIO_Program.o  ./src/MCAL/EXI_INTERRUPT/EX_Interrupt.o  ./src/MCAL/DMA/DMA_Program.o  ./src/MCAL/AFIO/AFIO.o  ./src/HAL/ULTRASONIC/ULTRASONIC_SENSOR_PROGRAM.o  ./src/HAL/MOTOR/MOTOR_Program.o  ./src/HAL/LCD/LCD_Program.o  ./src/HAL/ESP/ESP_Program.o  ./src/APP/VtoI/VtoI.o  ./src/main.o   
-Finished building target: ARM_NTI.elf
- 
-Invoking: Cross ARM GNU Create Flash Image
-arm-none-eabi-objcopy -O ihex "ARM_NTI.elf"  "ARM_NTI.hex"
-Finished building: ARM_NTI.hex
- 
 Invoking: Cross ARM GNU Print Size
 arm-none-eabi-size --format=berkeley "ARM_NTI.elf"
    text	   data	    bss	    dec	    hex	filename
-   8711	    176	    484	   9371	   249b	ARM_NTI.elf
+   5843	    276	    432	   6551	   1997	ARM_NTI.elf
 Finished building: ARM_NTI.siz
  
 
-12:55:49 Build Finished (took 1s.718ms)
+11:11:55 Build Finished (took 695ms)
 

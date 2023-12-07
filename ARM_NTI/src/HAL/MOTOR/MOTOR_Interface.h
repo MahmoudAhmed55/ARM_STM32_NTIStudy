@@ -14,7 +14,7 @@ typedef enum{
 	M3,
 	M4
 
-	}MOTOR_type;
+}MOTOR_type;
 void MOTOR_Init(void);
 
 void MOTOR_Stop(MOTOR_type m);

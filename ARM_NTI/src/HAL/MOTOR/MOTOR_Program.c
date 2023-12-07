@@ -35,7 +35,7 @@ void MOTOR_Stop(MOTOR_type m)
 	}
 }
 
-void MOTOR_CW(MOTOR_type m)
+void MOTOR_CCW(MOTOR_type m)
 {
 	switch(m)
 	{
@@ -44,21 +44,22 @@ void MOTOR_CW(MOTOR_type m)
 		GPIO_SetPinValue(M1_IN2,LOW);
 		break;
 		case M2:
-		GPIO_SetPinValue(M2_IN1,HIGH);
-		GPIO_SetPinValue(M2_IN2,LOW);
+		GPIO_SetPinValue(M2_IN1,LOW);
+		GPIO_SetPinValue(M2_IN2,HIGH);
 		break;
 		case M3:
 		GPIO_SetPinValue(M3_IN1,HIGH);
 		GPIO_SetPinValue(M3_IN2,LOW);
 		break;
 		case M4:
-		GPIO_SetPinValue(M4_IN1,HIGH);
-		GPIO_SetPinValue(M4_IN2,LOW);
+		GPIO_SetPinValue(M4_IN1,LOW);
+		GPIO_SetPinValue(M4_IN2,HIGH);
 		break;
 	}
 
 }
-void MOTOR_CCW(MOTOR_type m)
+
+void MOTOR_CW(MOTOR_type m)
 {
 	switch(m)
 	{
@@ -67,16 +68,16 @@ void MOTOR_CCW(MOTOR_type m)
 		GPIO_SetPinValue(M1_IN2,HIGH);
 		break;
 		case M2:
-		GPIO_SetPinValue(M2_IN1,LOW);
-		GPIO_SetPinValue(M2_IN2,HIGH);
+		GPIO_SetPinValue(M2_IN1,HIGH);
+		GPIO_SetPinValue(M2_IN2,LOW);
 		break;
 		case M3:
 		GPIO_SetPinValue(M3_IN1,LOW);
 		GPIO_SetPinValue(M3_IN2,HIGH);
 		break;
 		case M4:
-		GPIO_SetPinValue(M4_IN1,LOW);
-		GPIO_SetPinValue(M4_IN2,HIGH);
+		GPIO_SetPinValue(M4_IN1,HIGH);
+		GPIO_SetPinValue(M4_IN2,LOW);
 	}
 
 }

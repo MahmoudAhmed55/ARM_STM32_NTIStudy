@@ -11,6 +11,8 @@
 void moveForward(void);
 void movebackward(void);
 void Car_Stop(void);
+void MOVE_RIGHT(void);
+void MOVE_LEFT(void);
 
 
 

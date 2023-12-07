@@ -9,18 +9,18 @@
 #define MCAL_LCD_LCD_CONFIG_H_
 
 #define LCD_PORT  PA
-#define RS        PINA4
-#define EN        PINA5
+#define RS        PINB0
+#define EN        PINB1
 
 #define _8_BIT    1
 #define _4_BIT    0
 
 #define LCD_MODE  _4_BIT
 
-#define D4  PINA8
-#define D5  PINA7
-#define D6  PINA2
-#define D7  PINA3
+#define D4  PINB3
+#define D5  PINB4
+#define D6  PINB5
+#define D7  PINB6
 
 
 
