@@ -8,28 +8,28 @@
 const MODE_CNF_t DIO_PinsStatusArr[TOTAL_PINS]={
 		OUTPUT50MHZ_PUSHPALL,      /* Port A Pin 0 */
 		OUTPUT50MHZ_PUSHPALL,     /* Port A Pin 1 */
-		OUTPUT50MHZ_PUSHPALL,      /* Port A Pin 2 */
-		OUTPUT50MHZ_PUSHPALL,      /* Port A Pin 3 */
+		OUTPUT50MHZ_AF_PUSHPALL,      /* Port A Pin 2 */
+		INPUT_FLOATING,      /* Port A Pin 3 */
 		OUTPUT50MHZ_PUSHPALL,      /* Port A Pin 4 */
 		OUTPUT50MHZ_PUSHPALL,      /* Port A Pin 5 */
-		OUTPUT10KHZ_AF_PUSHPALL,      /* Port A Pin 6 */
+		INPUT_PULL_UP_DOWN,      /* Port A Pin 6 */
 		OUTPUT50MHZ_PUSHPALL,      /* Port A Pin 7 */
 		OUTPUT50MHZ_PUSHPALL,           /* Port A Pin 8 */
-		OUTPUT2MHZ_AF_PUSHPALL,       /* Port A Pin 9 */
+		OUTPUT50MHZ_AF_PUSHPALL,       /* Port A Pin 9 */
 		INPUT_FLOATING,            /* Port A Pin 10 */
-		OUTPUT2MHZ_PUSHPALL,     /* Port A Pin 11 */
+		OUTPUT50MHZ_PUSHPALL,     /* Port A Pin 11 */
 		OUTPUT50MHZ_PUSHPALL,      /* Port A Pin 12 */
 		OUTPUT50MHZ_PUSHPALL,      /* Port A Pin 13 */
 		OUTPUT50MHZ_PUSHPALL,      /* Port A Pin 14 */
 		OUTPUT50MHZ_PUSHPALL,      /* Port A Pin 15 */
 
-		OUTPUT2MHZ_PUSHPALL,      /* Port B Pin 0 */
-		OUTPUT2MHZ_PUSHPALL,      /* Port B Pin 1 */
-		OUTPUT2MHZ_PUSHPALL,      /* Port B Pin 2 */
-		OUTPUT2MHZ_PUSHPALL,      /* Port B Pin 3 */
-		OUTPUT2MHZ_PUSHPALL,      /* Port B Pin 4 */
-		OUTPUT2MHZ_PUSHPALL,      /* Port B Pin 5 */
-		OUTPUT2MHZ_PUSHPALL,           /* Port B Pin 6 */
+		OUTPUT50MHZ_PUSHPALL,      /* Port B Pin 0 */
+		OUTPUT50MHZ_PUSHPALL,      /* Port B Pin 1 */
+		OUTPUT50MHZ_PUSHPALL,      /* Port B Pin 2 */
+		OUTPUT50MHZ_PUSHPALL,      /* Port B Pin 3 */
+		OUTPUT50MHZ_PUSHPALL,      /* Port B Pin 4 */
+		OUTPUT50MHZ_PUSHPALL,      /* Port B Pin 5 */
+		OUTPUT50MHZ_PUSHPALL,           /* Port B Pin 6 */
 		OUTPUT50MHZ_PUSHPALL,      /* Port B Pin 7 */
 		OUTPUT50MHZ_PUSHPALL,      /* Port B Pin 8 */
 		OUTPUT50MHZ_PUSHPALL,      /* Port B Pin 9 */

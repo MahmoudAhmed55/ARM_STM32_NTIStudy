@@ -16,7 +16,7 @@ typedef enum{
 
 }MOTOR_type;
 void MOTOR_Init(void);
-
+void MOTOR_ENABLE(void);
 void MOTOR_Stop(MOTOR_type m);
 
 void MOTOR_CW(MOTOR_type m);

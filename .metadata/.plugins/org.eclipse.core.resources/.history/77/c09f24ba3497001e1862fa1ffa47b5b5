@@ -1,0 +1,201 @@
+/*
+ * VtoI.c
+ *
+ *  Created on: Dec 4, 2023
+ *      Author: lenovo
+ */
+#include "../../lib/STD_TYPES.h"
+#include "../../lib/BIT_MATH.h"
+
+#include "../../MCAL/RCC/RCC_Interface.h"
+#include "../../MCAL/GPIO/GPIO_Interface.h"
+#include "../../MCAL/NVIC/NVIC_Interface.h"
+#include "../../MCAL/SYSTICK/SYSTICK_Interface.h"
+#include "../../MCAL/TIMER/TIMER_Interface.h"
+#include "../../MCAL/EXI_Interrupt/EXI_Interrupt_Interface.h"
+#include "../../MCAL/AFIO/AFIO_Interface.h"
+#include "../../HAL/LCD/LCD_Interface.h"
+#include "../../MCAL/UART/UART_Interface.h"
+#include "../../HAL/ESP/ESP_Interface.h"
+#include "../../HAL/MOTOR/MOTOR_Interface.h"
+#include "../../HAL/ULTRA_SONIC/ULTRASONIC_Interface.h"
+#include "VtoI_Interface.h"
+#include "VtoI_Config.h"
+
+volatile c8 str[100]={'0'};
+volatile u8 i=0;
+static volatile u8 bluetooth=0;
+
+
+
+
+/**INIT_FUNCTION**/
+void VtoI_Init(void)
+{
+
+	RCC_InitClockSystem();
+	RCC_EnableClock(APB2,AFIO_EN);
+	RCC_EnableClock(APB2,IOPA);
+	RCC_EnableClock(APB2,IOPB);
+	RCC_EnableClock(APB2,IOPC);
+	RCC_EnableClock(APB2,USART);
+	RCC_EnableClock(APB1,USART2_EN);
+	RCC_EnableClock(APB2,TIM1);
+
+
+	SYSTICK_Init();
+	DIO_Init();
+	UART_Init();
+	UART_RX_SetCallBack(RX1);
+	Interrupt_Set_Enable(USART1);
+	UART_RX_InterruptEnable();
+	UART2_Init();
+	UART2_RX_SetCallBack(RX2);
+	Interrupt_Set_Enable(USART2);
+	UART2_RX_InterruptEnable();
+
+	ULTRASONIC_Init();
+	CAR_Init();
+	ESP_Init();
+}
+
+void VtoI_Com(void)
+{
+
+	ULTRASONIC_TRIG();
+	if (ULTRASONIC_Read()<20)
+	{
+		ESP_Post(STOP);
+		Car_Stop();
+	}
+	if (bluetooth==OVER_50_PRECENTAGE)
+	{
+		ESP_Post(INCREASE);
+	}
+	else if (bluetooth==UNDER_50_PRECENTAGE)
+	{
+		ESP_Post(DECREASE);
+	}
+
+}
+
+/**CAR_CONTROLLER_WITH_MOBILE APP***/
+void RC_Control(void)
+{
+
+
+	if (bluetooth=='F')
+	{
+		moveForward();
+	}
+	else  if (bluetooth=='B')
+	{
+		movebackward();
+	}
+	else if (bluetooth=='L')
+	{
+		MOVE_LEFT();
+	}
+	else if (bluetooth=='R')
+	{
+		MOVE_RIGHT();
+	}
+	else if (bluetooth=='S')
+	{
+		Car_Stop();
+	}
+	else if (bluetooth=='1')
+	{
+		MOTOR_Speed(M1,20);
+		MOTOR_Speed(M2,20);
+		MOTOR_Speed(M3,20);
+		MOTOR_Speed(M4,20);
+	}
+	else if (bluetooth=='2')
+	{
+		MOTOR_Speed(M1,20);
+		MOTOR_Speed(M2,20);
+		MOTOR_Speed(M3,20);
+		MOTOR_Speed(M4,20);
+	}
+	else if (bluetooth=='3')
+	{
+		MOTOR_Speed(M1,20);
+		MOTOR_Speed(M2,20);
+		MOTOR_Speed(M3,20);
+		MOTOR_Speed(M4,20);
+	}
+	else if (bluetooth=='4')
+	{
+		MOTOR_Speed(M1,20);
+		MOTOR_Speed(M2,20);
+		MOTOR_Speed(M3,20);
+		MOTOR_Speed(M4,20);
+	}
+	else if (bluetooth=='5')
+	{
+		MOTOR_Speed(M1,20);
+		MOTOR_Speed(M2,20);
+		MOTOR_Speed(M3,20);
+		MOTOR_Speed(M4,20);
+	}
+
+}
+
+/**CAR_CONTROL_FUNCTION**/
+
+void CAR_Init(void)
+{
+	MOTOR_ENABLE();
+	Car_Stop();
+}
+void moveForward(void)
+{
+	MOTOR_CW(M1);
+	MOTOR_CW(M2);
+	MOTOR_CW(M3);
+	MOTOR_CW(M4);
+}
+
+void movebackward(void)
+{
+	MOTOR_CCW(M1);
+	MOTOR_CCW(M2);
+	MOTOR_CCW(M3);
+	MOTOR_CCW(M4);
+
+}
+void Car_Stop(void)
+{
+	MOTOR_Stop(M1);
+	MOTOR_Stop(M2);
+	MOTOR_Stop(M3);
+	MOTOR_Stop(M4);
+}
+void MOVE_RIGHT(void)
+{
+	MOTOR_CW(M1);
+	MOTOR_CCW(M3);
+	MOTOR_CCW(M2);
+	MOTOR_CCW(M4);
+}
+void MOVE_LEFT(void)
+{
+	MOTOR_CCW(M1);
+	MOTOR_Stop(M3);
+	MOTOR_CW(M2);
+	MOTOR_CW(M4);
+}
+
+/**UART1,2_CALLBACK_FUNCTION***/
+void RX1(void)
+{
+	str[i]=UART_Recieve();
+	i++;
+}
+
+void RX2(void)
+{
+	bluetooth=UART_Recieve();
+}
+

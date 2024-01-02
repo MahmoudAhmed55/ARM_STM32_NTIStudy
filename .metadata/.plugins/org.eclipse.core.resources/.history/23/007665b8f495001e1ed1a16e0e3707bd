@@ -1,0 +1,103 @@
+/*
+ * main.c
+ *
+ *  Created on: Nov 2, 2023
+ *      Author: Mahmoud Ahmed Ismail
+ */
+
+/*
+ * main.c
+ *
+ *  Created on: Nov 2, 2023
+ *      Author: Mahmoud Ahmed Ismail
+ */
+
+#include "lib/STD_TYPES.h"
+#include "lib/BIT_MATH.h"
+
+#include "MCAL/RCC/RCC_Interface.h"
+#include "MCAL/GPIO/GPIO_Interface.h"
+#include "MCAL/NVIC/NVIC_Interface.h"
+#include "MCAL/SYSTICK/SYSTICK_Interface.h"
+#include "MCAL/TIMER/TIMER_Interface.h"
+#include "MCAL/EXI_Interrupt/EXI_Interrupt_Interface.h"
+#include "MCAL/AFIO/AFIO_Interface.h"
+#include "HAL/LCD/LCD_Interface.h"
+#include "MCAL/UART/UART_Interface.h"
+#include "HAL/ESP/ESP_Interface.h"
+#include "APP/VtoI/VtoI_Interface.h"
+
+volatile char str[100]={'0'};
+volatile u8 i=0,flag=0;
+volatile u16 t=0,t1=0,t2=0,d=0;
+/*volatile*/ 8 blu=0;
+
+/*void rx(void)
+{
+	str[i]=UART_Recieve();
+	i++;
+}*/
+/*
+void RX(void)
+{
+	blu=UART_Recieve();
+}
+*/
+void main(void)
+{
+	SYSTICK_Init();
+
+	//__enable_irq();
+	RCC_InitClockSystem();
+	//RCC_EnableClock(APB2,AFIO_EN);
+	RCC_EnableClock(APB2,IOPA);
+	RCC_EnableClock(APB2,IOPB);
+	RCC_EnableClock(APB2,IOPC);
+	//RCC_EnableClock(APB1,USART2_EN);
+	RCC_EnableClock(APB2,USART);
+	DIO_Init();
+	UART_Init();
+
+	//UART_RX_SetCallBack(RX);
+	//Interrupt_Set_Enable(USART1);
+	//UART_RX_InterruptEnable();
+	/*UART2_Init();
+	UART2_RX_SetCallBack(RX);
+	Interrupt_Set_Enable(USART2);
+	UART2_RX_InterruptEnable();*/
+	//c8 x='A';
+	GPIO_SetPinValue(PINA8,HIGH);
+	GPIO_SetPinValue(PINA5,HIGH);
+	GPIO_SetPinValue(PINA6,HIGH);
+	GPIO_SetPinValue(PINA7,HIGH);
+	while(1)
+	{
+		blu=UART_Recieve();
+
+		if (blu=='F')
+		{
+			moveForward();
+		}
+		 if (blu=='B')
+		{
+			movebackward();
+		}
+		 if (blu=='L')
+		{
+			MOVE_LEFT();
+		}
+		 if (blu=='R')
+		{
+			MOVE_RIGHT();
+		}
+		 if (blu=='S')
+		{
+			Car_Stop();
+		}
+
+	}
+}
+
+
+
+

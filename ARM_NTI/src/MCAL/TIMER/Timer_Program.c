@@ -9,87 +9,135 @@
 #include "../../lib/BIT_MATH.h"
 #include "TIMER_Interface.h"
 #include "TIMER_Private.h"
-//#include "TIMER_Config.h"
+#include "TIMER_Config.h"
 
 static void (*PTR1)(void)=NULL_PTR;
+static void (*PTR2)(void)=NULL_PTR;
 
 
 
 
-void TIMER_Init(void)
+void TIMER1_Init(void)
 {
 	CLR_BIT(TIMER_CR1,DIR);                // UP_COUNTING
 
-	TIMx_PSC=7;                         // prescalLer 1M
-	TIMx_ARR=65535;
-	SIT_BIT(TIMER_CR1,APPE);
-	SIT_BIT(TIMx_EGR,0);
+	TIMx_PSC=TIMER1_PRESCALLER;                         // prescalLer 1M
+
 	SIT_BIT(TIMER_CR1,CEN);                  // Enable TIMER1
 }
 
-
-/*WHEN CAPTURE  CCXIF flag (TIMx_SR register) is set CCxOF ALSO
- * e TIMx_CCR1 register becomes read-only.
- * CC1IF flag is set &&CC1OF is also set if at least two consecutive captures
- */
-void TIMER_ICU1Init(void)
+void TIMER1_AutoReload(u16 over)
 {
+	TIMx_ARR=over;        //OVF
+}
 
-	SIT_BIT(TIMx_CCMR1,CC1S);        //active ch1 ICU as input
+void TIMER1_ICU1Init(void)
+{
+	CLR_BIT(TIMER_CR1,CEN);                // Disable TIMER1
+	CLR_BIT(TIMER_CR1,DIR);                // UP_COUNTING
 
-	CLR_BIT(TIMx_CCER,CC1P);         //RISING EDGE
+	TIMx_PSC=TIMER1_PRESCALLER;                            // prescalLer 1M
 
-	CLR_BIT(TIMx_CCMR1,IC1PSC);    //no prescalLer,capture is done eachtime an edge is detected on the capture input
-	CLR_BIT(TIMx_CCMR1,3);
+	SIT_BIT(TIMx_CCMR1,CC1S);              //active ch1 ICU as input
+
+
+	CLR_BIT(TIMx_CCMR1,IC1PSC);            //no prescalLer,capture is done eachtime an edge is detected on the capture input
+
+	CLR_BIT(TIMx_CCER,CC1P);                  //RISING EDGE
 
 	SIT_BIT(TIMx_CCER,CC1E);  //ENABLE ICU
 
-
+	SIT_BIT(TIMER_CR1,CEN);    // Enable TIMER1
 }
 
+void TIMER1_ICUI2nit(void)
+{
 
 
-void Timer_InputCaptureEdge(Trig_t trig)
+	//CLR_BIT(TIMER_CR1,CEN);    // Disable TIMER1
+
+	SIT_BIT(TIMx_CCMR1,1); //active ch2 ICU as input
+
+	/*CLR_BIT(TIMx_CCMR1,IC1PSC); //no prescalLer,capture is done eachtime an edge is detected on the capture input
+	CLR_BIT(TIMx_CCMR1,3);*/
+
+
+	SIT_BIT(TIMx_CCER,CC1P);    //FALLING EDGE
+
+	SIT_BIT(TIMx_CCER,4);  //ENABLE ICU
+
+	//SIT_BIT(TIMER_CR1,CEN);    // Enable TIMER1
+}
+
+void Timer1_InputCaptureEdge(Trig_t trig)
 {
 	switch (trig)
 	{
 	case RISING_TIMER:CLR_BIT(TIMx_CCER,CC1P);              //RISING EDGE
+	CLR_BIT(TIMx_CCER,CC1P);
 	break;
 	case FALLING_TIMER:SIT_BIT(TIMx_CCER,CC1P);             //FALLING EDGE
+	SIT_BIT(TIMx_CCER,CC1P);
 	break;
 	}
+}
+
+
+void TIMER1_InterruptEnable(void)
+{
+	SIT_BIT(TIMx_DIER,UIE);
+}
+void TIMER1_InterruptDisable(void)
+{
+	CLR_BIT(TIMx_DIER,UIE);
 }
 
 /*The current value of the counter is captured in TIMx_CCR1 register. The CC1IF flag is set,
 the corresponding interrupt or DMA request is sent if enabled. The CC1OF flag is set if the
 CC1IF flag was already high.*/
-void TIMER_ICU1InterruptEnable(void)
+void TIMER1_ICU1InterruptEnable(void)
 {
 
-	SIT_BIT(TIMx_EGR,1);
-	SIT_BIT(TIMx_DIER,CC1IE); // RELATED INTURREPUT
-	SIT_BIT(TIMx_DIER,0);
+	SIT_BIT(TIMx_EGR,UG);
+	SIT_BIT(TIMx_DIER,CC1IE);
 
 }
-void TIMER_ICU1InterruptDisable(void)
+void TIMER1_ICU1InterruptDisable(void)
 {
-	CLR_BIT(TIMx_EGR,1);
+	CLR_BIT(TIMx_EGR,UG);
 	CLR_BIT(TIMx_DIER,CC1IE);
-	CLR_BIT(TIMx_DIER,0);
-
 
 
 }
 
+void PWM_Generate(u8 value)
+{
+	TIMx_ARR=1000;
+	TIMx_CCR1 = value;
 
-void TIMER_SetCallBack(void(*ptr)(void))
+}
+
+void TIMER1_SetCallBack(void(*ptr)(void))
 {
 	PTR1=ptr;
 
 }
 
-void TIM2_IRQHandler(void)
+void TIM1_UP_IRQHandler(void)
 {
-	TIMx_SR=0;
 	PTR1();
+	CLR_BIT(TIMx_SR,UIF);
+}
+
+void TIMER1_ICUSetCallBack(void(*ptr)(void))
+{
+	PTR2=ptr;
+
+}
+
+void TIM1_CC_IRQHandler(void)
+{
+	TIMx_SR=ZERO;
+	PTR2();
+
 }

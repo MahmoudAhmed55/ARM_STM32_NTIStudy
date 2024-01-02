@@ -8,11 +8,12 @@
 #ifndef MCAL_TIMER_TIMER_PRIVATE_H_
 #define MCAL_TIMER_TIMER_PRIVATE_H_
 
-#define   TIMER1_BASEADDRESS      (0x40000000)
+#define   TIMER1_BASEADDRESS      (0x40012C00)
 
 
 #define TIMER_CR1                    *((volatile u32*) (TIMER1_BASEADDRESS +0x00))//timer control register
 
+#define TIMER_CR2                    *((volatile u32*) (TIMER1_BASEADDRESS +0x04))
 #define CEN     0
 #define UDIS    1
 #define URS     2
@@ -20,8 +21,6 @@
 #define CMS0	5
 #define CMS1	6
 #define APPE    7
-
-#define TIMER_CR2                    *((volatile u32*) (TIMER1_BASEADDRESS +0x04))
 
 #define TIMx_SR                         *((volatile u32*) (TIMER1_BASEADDRESS +0x10))//interrupt flag register
 #define UIF    0    // OV INTERRUPT
@@ -31,6 +30,7 @@
 #define TIMx_ARR                         *((volatile u32*) (TIMER1_BASEADDRESS +0x2C)) //reload register
 
 #define TIMx_EGR                         *((volatile u32*) (TIMER1_BASEADDRESS +0x14)) // enable icu
+#define UG        1
 #define TIMx_CCMR1                       *((volatile u32*) (TIMER1_BASEADDRESS +0x18)) // filter (icf)and mode
 #define CC1S      0 //ACTIVR ICU 0->1
 #define IC1PSC    2  //DISAPLE PRESCALLER 2->3

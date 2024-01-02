@@ -2,12 +2,13 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="SIT_BIT" key="selection"/>
+		<item value="bluetooth" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="blu"/>
 			<item value="SET_BIT"/>
 			<item value="_delay_us"/>
 			<item value="OUTPUT_SPEED_2MHZ_PP"/>
@@ -15,9 +16,9 @@
 			<item value="MGPIO_voidSetPinDirection"/>
 			<item value="FALLING"/>
 			<item value="RISING"/>
-			<item value="ESP_Get()"/>
 		</list>
 		<list key="replacehistory">
+			<item value="bluetooth"/>
 			<item value="SIT_BIT"/>
 			<item value="SYSTICK_BusyWait_Us"/>
 			<item value="OUTPUT50MHZ_PUSHPALL"/>
@@ -25,7 +26,6 @@
 			<item value="GPIO_SetPinDirection"/>
 			<item value="FALLING_t"/>
 			<item value="RISING_t"/>
-			<item value="x"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

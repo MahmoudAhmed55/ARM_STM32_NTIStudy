@@ -1,0 +1,23 @@
+/*
+ * VtoI_Config.h
+ *
+ *  Created on: Dec 10, 2023
+ *      Author: lenovo
+ */
+
+#ifndef APP_VTOI_VTOI_CONFIG_H_
+#define APP_VTOI_VTOI_CONFIG_H_
+
+
+#define   STOP                       's'
+#define   INCREASE                   'I'
+#define   DECREASE                   'D'
+#define   OVER_50_PRECENTAGE         '3'
+#define   UNDER_50_PRECENTAGE        '2'
+#define   DECREASE                   'D'
+#define   STOP                       's'
+#define   INCREASE                   'I'
+#define   DECREASE                   'D'
+
+
+#endif /* APP_VTOI_VTOI_CONFIG_H_ */
